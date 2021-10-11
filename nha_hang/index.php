@@ -49,10 +49,25 @@
         include('../views/layouts/header.php');
       ?>
     </section>
-    <section class="carousel">
+    
+    <section class="body_thong_tin_nha_hang container py-5">
+      <section class="thongitn_nhahang_layout pb-5">
+        <?php
+          include("../views/nha_hang/Profile_nha_hang.php");
+        ?>
+      </section>
+      <section class="products_nhahang_layout pb-5">
+        <?php
+          include("../views/nha_hang/products_nhahang.php");
+        ?>
+      </section>
+    </section>
+
+    <section class="footer_trangchu">
       <?php
-        include("../views/layouts/carousel.php");
+        include("../views/layouts/footer.php");
       ?>
     </section>
+
   </body>
 </html>

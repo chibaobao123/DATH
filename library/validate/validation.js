@@ -59,3 +59,23 @@ function kiemtramatkhau(mk) {
 
 	return true;
 }
+
+function kiemtrasex(sex){
+	if(sex == '' || sex == undefined){
+		thongbaoloi('Bạn chưa khai báo giới tính!!!');
+		return false;
+	}
+	return true;
+}
+
+function kiemtradiachi(dia_chi){
+	if(dia_chi == '' || dia_chi == undefined){
+		thongbaoloi('Địa chỉ không được để trống!!!');
+		return false;
+	}
+	return true;
+}
+
+function tailaitrang() {
+	setTimeout(function () { location.reload(); }, 1000);
+  }

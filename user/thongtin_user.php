@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/layouts.css">
 
     <!-- css layout trang_chu.css -->
-    <link rel="stylesheet" href="../css/trang_chu.css">
+    <link rel="stylesheet" href="../css/thongtin_khachhang.css">
 
     <!-- toast -->
     <link rel="stylesheet" href="../library/toast/jquery.toast.min.css">
@@ -50,5 +50,41 @@
       ?>
     </section>
 
+    <section class="profile_khachhang_layout">
+      <?php
+        include("../views/thong_tin_khach_hang/profile_khach_hang.php");
+      ?>
+    </section>
+
+    <section class="form_sua_thong_tin">
+      <?php
+        include("../views/thong_tin_khach_hang/form_sua_thong_tin.php");
+      ?>
+    </section>
+
+    <section class="body_thong_tin_khach_hang container pb-5">
+      <section class="thongitn_khachhang_layout pb-5">
+        <?php
+          include("../views/thong_tin_khach_hang/thong_tin_khach_hang.php");
+        ?>
+      </section>
+      <section class="thongitn_donhang_layout pb-5">
+        <?php
+          include("../views/thong_tin_khach_hang/don_hang.php");
+        ?>
+      </section>
+    </section>
+
+    <section class="footer_trangchu">
+      <?php
+        include("../views/layouts/footer.php");
+      ?>
+    </section>
+
   </body>
+
+  <script>
+      // tailaitrang()
+
+  </script>
 </html>

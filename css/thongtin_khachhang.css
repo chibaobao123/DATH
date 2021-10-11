@@ -1,0 +1,154 @@
+body{
+    background-color: #00000e;
+}
+
+/* body_trang_chu */
+.body_thong_tin_khach_hang{
+    background-color: #001533;
+}
+
+/* products_nhahang.php */
+
+.btn_choose_kindof_products button{
+    border: none;
+    margin: 0px 10px ;
+    padding: 0px;
+    background-color: #001533;
+    color: white;
+}
+
+.btn_choose_kindof_products button:focus, .btn_choose_kindof_products button:focus-visible{
+    outline: none;
+    box-shadow: none;
+    border:none;
+}
+
+.item_card_trangchu{
+    width: 100%;
+    height: 300px;
+}
+
+.item_card_trangchu{
+    padding: 15px auto;
+}
+
+.item_card_trangchu p{
+    padding: 0;
+    margin : 0;
+}
+
+.item_card_trangchu img{
+    padding: 0;
+    margin : 0;
+    height: 170px;
+    width: 100%;
+}
+
+
+
+.item_card_trangchu .card-body{
+    padding: 5px;
+}
+
+/* profile_khachhang */
+.profile_khachhang{
+    background-color: #3949ab;
+    
+}
+
+/* thong_tin_khach_hang.php */
+.select-button-donhang button{
+    border: none;
+    background-color:  #222e7c;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+}
+
+.select-button-donhang button:focus, .select-button-donhang button:focus-visible{
+    outline: none;
+    box-shadow: none;
+}
+
+.select-button-donhang{
+    background-color: #222e7c;
+    border-radius: 10px;
+}
+
+.table_sanpham{
+    background-color: #222e7c;
+    border-radius: 10px;
+}
+
+.table_sanpham .title_sanpham_order{
+    border-bottom:1px solid white;
+}
+
+.table_sanpham .title_sanpham_order .img_sanpham img{
+    border-radius:10px;
+}
+
+.table_sanpham .title_sanpham_order .tittle_sanpham{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.table_sanpham .title_sanpham_order .nhahang_sanpham{
+    font-size: 1.2rem;
+}
+
+.table_sanpham .title_sanpham_order .soluong_sanpham{
+    font-size: 1rem;
+}
+
+.table_sanpham .title_sanpham_order .gia_sanpham{
+    color: #ee4d2d;
+}
+
+.table_sanpham .tongtien_sanpham .tong_tien{
+    color: #ee4d2d;
+    font-size: 2rem;
+    padding: 0 1rem 0 4rem;
+}
+
+.table_sanpham .tongtien_sanpham .tong_tien_content {
+    font-size:1.5rem;
+    padding: 0 5.5rem;
+}
+
+.table_sanpham .btn_lienhe_nhanhang .danhanhang{
+    border: none;
+    background-color: #ee4d2d;
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    margin: 0 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 400;
+    border-radius: 0.625rem;
+}
+
+.table_sanpham .btn_lienhe_nhanhang .lienhenguoiban{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(146, 145, 145);
+    padding: 0.625rem 1.563rem;
+    margin: 0 1.25rem;
+    font-size: 1.2rem;
+    border-radius: 0.625rem;
+}
+
+.thongtin_chitiet_donhang .table_sanpham .don_hang_icon{
+    height:90px;
+    width:90px;
+}
+
+.thongtin_chitiet_donhang .table_sanpham .don_hang_icon i{
+    height:100%;
+    width:100%;
+    text-align: center;
+}
+/* footer.php */
+
+.footer_trangchu{
+    background-color: #1a235a;
+}

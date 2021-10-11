@@ -2,3 +2,56 @@ body{
     background-color: #00000e;
 }
 
+/* body_trang_chu */
+.body_trang_user{
+    background-color: #001533;
+}
+
+/* products_nhahang.php */
+
+.btn_choose_kindof_products button{
+    border: none;
+    margin: 0px 10px ;
+    padding: 0px;
+    background-color: #001533;
+    color: white;
+}
+
+.btn_choose_kindof_products button:focus, .btn_choose_kindof_products button:focus-visible{
+    outline: none;
+    box-shadow: none;
+    border:none;
+}
+
+.item_card_trangchu{
+    width: 100%;
+    height: 300px;
+}
+
+.item_card_trangchu{
+    padding: 15px auto;
+}
+
+.item_card_trangchu p{
+    padding: 0;
+    margin : 0;
+}
+
+.item_card_trangchu img{
+    padding: 0;
+    margin : 0;
+    height: 170px;
+    width: 100%;
+}
+
+
+
+.item_card_trangchu .card-body{
+    padding: 5px;
+}
+
+/* footer.php */
+
+.footer_trangchu{
+    background-color: #1a235a;
+}

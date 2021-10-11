@@ -7,7 +7,7 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         
-        $sql = "SELECT * FROM tai_khoan WHERE username='$username' OR email = '$username' OR sdt = '$username' AND password ='$password'";
+        $sql = "SELECT * FROM tai_khoan WHERE password ='$password' AND username='$username' OR email = '$username' AND password ='$password' ";
         $rs = mysqli_query($db, $sql);
         $count = mysqli_num_rows($rs);
         
@@ -15,7 +15,7 @@
             $rss = mysqli_fetch_assoc($rs);
             if ($rss['rank'] == 1){
                 $_SESSION['rank'] = $rss['rank'];
-                $_SESSION['login_user'] = $rss['username'];
+                $_SESSION['login_user'] = $rss['ten'];
                 echo $_SESSION['rank'];
             }
         } else {

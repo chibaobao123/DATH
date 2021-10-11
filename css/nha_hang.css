@@ -1,1 +1,93 @@
 
+body{
+    background-color: #00000e;
+}
+
+/* body_trang_chu */
+.body_thong_tin_nha_hang{
+    background-color: #001533;
+}
+
+/* profile_nhahang */
+.profile_nhahang{
+    background-color: #3949ab;
+    
+}
+
+.products_nhahang_layout .btn_selects_products_nhahang{
+    border-radius: 10px;
+}
+
+.products_nhahang_layout .btn_selects_products_nhahang button{
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    background-color: #222e7c;
+    padding: 20px;
+    text-align: left;
+}
+
+.products_nhahang_layout .btn_selects_products_nhahang button:focus, .products_nhahang_layout .btn_selects_products_nhahang button:focus-visible{
+    outline: none;
+    box-shadow: none;
+}
+
+.products_nhahang_layout .btn_selects_products_nhahang button:first-child{
+    border-radius: 10px 10px 0 0;
+}
+
+.products_nhahang_layout .btn_selects_products_nhahang button:last-child{
+    border-radius: 0 0 10px 10px;
+}
+
+/* products_nhahang.php
+.btn_selects_products_nhahang .backgroundColorForBtn_products_nhahang{
+    background-color: #101748;
+} */
+
+
+/* card */
+
+.item_card_trangchu{
+    width: 100%;
+    height: 400px;
+}
+
+.item_card_trangchu{
+    padding: 15px auto;
+}
+
+.item_card_trangchu p{
+    padding: 0;
+    margin : 0;
+}
+
+.item_card_trangchu img{
+    padding: 0;
+    margin : 0;
+    height: 170px;
+    width: 100%;
+}
+
+.item_card_trangchu .card-body{
+    padding: 5px;
+    height: 200px;
+    position: relative;
+}
+
+.item_card_trangchu .card-body .content_card_trangchu{
+    position: absolute;
+    inset: 5rem 0 3rem 0.4rem;
+}
+
+.item_card_trangchu .card-body button{
+    position: absolute;
+    inset: 9rem 0rem 0rem 0;
+}
+
+
+/* footer.php */
+
+.footer_trangchu{
+    background-color: #1a235a;
+}

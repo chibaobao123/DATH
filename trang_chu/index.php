@@ -62,6 +62,12 @@
       ?>
     </section>
 
+    <section class="form_dang_nhap_dang_ky">
+      <?php
+        include("../views/trang_chu/form_dangnhap_dangky.php");
+      ?>
+    </section>
+
     <section class="carousel">
       <?php
         include("../views/layouts/carousel.php");

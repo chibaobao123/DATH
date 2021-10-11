@@ -11,10 +11,9 @@
       <input class="input-search-navbar" type="search" placeholder="Search" aria-label="Search">
       <button class="btn-search-navbar"><i class="fas fa-search"></i></button>
     </div>
-
-    <div class="col-2"></div>
-
-    <div class="col text-right">
+    <div class="col-1"></div>
+    <div class="col text-center">
+        <span class="ten-khach-hang-navbar-hide d-none"><?php echo $_SESSION['login_user'] ?></span>
         <button class="btn ten-khach-hang-navbar text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php echo $_SESSION['login_user'] ?>
             <span></span>
@@ -22,7 +21,7 @@
             <span></span>
             <span></span>
         </button>
-        <div class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu mt-2 ml-5" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="./thongtin_user.php"><i class="pr-2 fas fa-info-circle"></i>Thông tin cá nhân</a>
             <a class="dropdown-item" href="../logout/logout.php"><i class="pr-2 fas fa-power-off"></i>Đăng xuất</a>
         </div>

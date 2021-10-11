@@ -10,11 +10,11 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="tai_khoan_dang_nhap">Tài khoản:</label>
+            <label class="border-bottom border-dark"  for="tai_khoan_dang_nhap">Tài khoản hoặc Email:</label>
             <input type="text" class="form-control" id="tai_khoan_dang_nhap">
           </div>
           <div class="form-group">
-            <label for="mat_khau_dang_nhap">Password</label>
+            <label class="border-bottom border-dark"  for="mat_khau_dang_nhap">Password</label>
             <input type="password" class="form-control" id="mat_khau_dang_nhap">
           </div>
         </form>
@@ -33,8 +33,8 @@
 	
 	$("#btn-dang-nhap-form").click(function() {
 		
-		var u = $("#tai_khoan_dang_nhap").val().trim();
-		var p =  $("#mat_khau_dang_nhap").val().trim();
+		let u = $("#tai_khoan_dang_nhap").val().trim();
+		let p =  $("#mat_khau_dang_nhap").val().trim();
 		
 		if (u == "" || p == "") {
 			thongbaoloi("Tên đăng nhập/Mật khẩu không được bỏ trống!!!");
@@ -55,9 +55,9 @@
 				if (msg == "1") {
 					location.href = '../user/index.php';
 				} else {
-					thongbaoloi("Đăng nhập thất bại!!!");
+					// thongbaoloi("Tên đăng nhập hoặc mật khẩu không đúng!!!!");
+          thongbaoloi(msg)
 				}
-				
 			}
 		});
 	});
