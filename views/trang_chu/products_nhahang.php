@@ -100,7 +100,7 @@
         
         function getDataOfNhaHang() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -125,7 +125,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -144,7 +144,7 @@
 
         function getDataOfNhaHang_chay() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -169,7 +169,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -184,7 +184,7 @@
 
         function getDataOfNhaHang_quan1() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -209,7 +209,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -225,7 +225,7 @@
 
         function getDataOfNhaHang_quan3() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -250,7 +250,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -265,7 +265,7 @@
 
         function getDataOfNhaHang_quanbinhthanh() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -290,7 +290,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -305,7 +305,7 @@
 
         function getDataOfNhaHang_quanphunhuan() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -330,7 +330,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
@@ -345,7 +345,7 @@
 
         function getDataOfNhaHang_quangovap() {
             $.ajax({
-                url: '../api/trang_chu/nha_hang.php',
+                url: '../api/nha_hang/nha_hang.php',
                 type: 'GET',
                 cache: false,
                 data: {
@@ -370,7 +370,7 @@
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten + "</b></p>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
                             html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"

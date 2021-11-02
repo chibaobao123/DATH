@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -139,7 +139,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
                 <div class="card-body">
                     <p>Card title</p>
                     <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
                 </div>
             </div>
         </div>

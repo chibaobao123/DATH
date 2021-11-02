@@ -44,34 +44,45 @@
     <!-- validation -->
     <script src="../library/validate/validation.js"></script>
 
+    <!-- pagination_js -->
+    <script src="../library/pagination_js/pagination.js"></script>
+
+
     <section class="header_user">
       <?php
         include('../views/layouts/header.php');
       ?>
     </section>
-    <section class="carousel">
-      <?php
-        include("../views/layouts/carousel.php");
-      ?>
-    </section>
-
-    <section class="body_trang_user container pt-1 pb-5">
-      <section class="products_nhahang pb-5">
+    <section class='body_page_begin'>
+      <section class="carousel">
         <?php
-          include("../views/user/products_nhahang.php");
+          include("../views/layouts/carousel.php");
         ?>
       </section>
-      <section class="products_nhahang pb-5">
-        <?php
-          include("../views/user/products_monan.php");
-        ?>
-      </section>
-      
+
+      <section class="body_trang_user container pt-1 pb-5">
+        <section class="products_nhahang pb-5">
+          <?php
+            include("../views/user/products_nhahang.php");
+          ?>
+        </section>
+        <section class="products_nhahang pb-5">
+          <?php
+            include("../views/user/products_monan.php");
+          ?>
+        </section>
       </section>
     </section>
 
+    <section class="body_trang_user container body_page_search d-none">
+        <div class='close_search_body d-flex justify-content-end py-4'>
+          <button type='button' class='btn btn-primary close_search_body_button'><i class='fas fa-times' style='font-size: 20px;'></i></button>
+        </div>
+        <div class="body_page_search_data">
 
-
+        </div>
+    </section>
+    
     <section class="footer_trangchu">
       <?php
         include("../views/layouts/footer.php");

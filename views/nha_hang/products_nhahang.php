@@ -193,11 +193,6 @@
             
         })
 
-        function getDataProductsNhaHang() {
-            $.get("../api/nha_hang", function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        }
-
+        
     });
 </script>

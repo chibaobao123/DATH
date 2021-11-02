@@ -29,14 +29,17 @@
             let html = "";
             for (let i = 0; i < data.length; i++) {
                 html += "<div class='row'>";
-                    html += "<div class='col-3 d-flex justify-content-center align-items-center'>";
+                    html += "<div class='col-3 d-flex justify-content-center align-items-center container-img-avatar-profile'>";
 
                     if(data[i].avatar == ''){
                         html += "<img class='img-avatar-profile rounded-circle' src='https://via.placeholder.com/150' height='200' width='200'/>";
                     } else {
-                        html += "<img class='img-avatar-profile rounded-circle' src='" + data[i].avatar +"' height='200' width='200'/>";
+                        html += "<img class='img-avatar-profile rounded-circle' src='../asset/img_user/" + data[i].avatar +"' height='200' width='200'/>";
                     }
 
+                    html += "<div class='middle'>";
+                    html += "<button class='btn btn-secondary'>Chỉnh sửa</button>";
+                    html += "</div>";
                     html+= "</div>";
                     html += "<div class='col-5'>";
                         html += "<div class='px-0'>";

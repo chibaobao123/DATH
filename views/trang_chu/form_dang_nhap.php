@@ -2,13 +2,14 @@
   <div class="modal-dialog pt-5 mt-5">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+        <h5 class="modal-title" id="dang_nhap_title">Đăng nhập</h5>
+        <h5 class="modal-title cap_lai_mat_khau_title d-none" id="cap_lai_mat_khau_title"><button class="btn quay_lai_dang_nhap"><i class="fas fa-arrow-left"></i></button>Cấp lại mật khẩu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id='form_dang_nhap'>
           <div class="form-group">
             <label class="border-bottom border-dark"  for="tai_khoan_dang_nhap">Tài khoản hoặc Email:</label>
             <input type="text" class="form-control" id="tai_khoan_dang_nhap">
@@ -18,10 +19,19 @@
             <input type="password" class="form-control" id="mat_khau_dang_nhap">
           </div>
         </form>
+
+        <form id='form_quen_mat_khau' class='form_quen_mat_khau d-none'>
+          <div class="form-group">
+            <label class="border-bottom border-dark"  for="tai_khoan_quen_mat_khau">Tài khoản hoặc Email:</label>
+            <input type="text" class="form-control" id="tai_khoan_quen_mat_khau">
+          </div>
+        </form>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-secondary" id="btn-quen-mat-khau">Quên mật khẩu</button>
         <button type="button" class="btn btn-primary" id="btn-dang-nhap-form">Đăng nhập</button>
+        <button type="button" class="btn btn-primary w-100 btn-cap-lai-mat-khau-form d-none" id="btn-cap-lai-mat-khau-form">Cấp lại mật khẩu</button>
       </div>
     </div>
   </div>
@@ -61,5 +71,32 @@
 			}
 		});
 	});
+
+
+  $('#btn-quen-mat-khau').on('click', function(){
+    $('#btn-quen-mat-khau').addClass('d-none');
+    $('#btn-dang-nhap-form').addClass('d-none');
+    $('#form_dang_nhap').addClass('d-none');
+    $('#dang_nhap_title').addClass('d-none');
+
+    $('.btn-cap-lai-mat-khau-form').removeClass('d-none');
+    $('.form_quen_mat_khau').removeClass('d-none');
+    $('.cap_lai_mat_khau_title').removeClass('d-none');
+
+  })
+
+  $('.quay_lai_dang_nhap').on('click', function(){
+    $('#btn-quen-mat-khau').removeClass('d-none');
+    $('#btn-dang-nhap-form').removeClass('d-none');
+    $('#form_dang_nhap').removeClass('d-none');
+    $('#dang_nhap_title').removeClass('d-none');
+
+    $('.btn-cap-lai-mat-khau-form').addClass('d-none');
+    $('.form_quen_mat_khau').addClass('d-none');
+    $('.cap_lai_mat_khau_title').addClass('d-none');
+
+  })
+
+
 })	
 </script>

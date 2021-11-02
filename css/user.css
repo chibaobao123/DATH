@@ -25,7 +25,7 @@ body{
 
 .item_card_trangchu{
     width: 100%;
-    height: 300px;
+    height: 350px;
 }
 
 .item_card_trangchu{
@@ -44,10 +44,26 @@ body{
     width: 100%;
 }
 
-
-
 .item_card_trangchu .card-body{
     padding: 5px;
+    /* height: 200px;
+    position: relative; */
+}
+
+/* .item_card_trangchu .card-body .content_card_trangchu{
+    position: absolute;
+    inset: 5rem 0 3rem 0.4rem;
+}
+
+.item_card_trangchu .card-body button{
+    position: absolute;
+    inset: 9rem 0rem 0rem 0;
+} */
+
+
+.table_sanpham{
+    background-color: #222e7c;
+    border-radius: 10px;
 }
 
 /* footer.php */

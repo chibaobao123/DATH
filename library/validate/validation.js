@@ -52,10 +52,42 @@ function kiemtramatkhau(mk) {
 		thongbaoloi("Mật khẩu không được bỏ trống!!!");
 		return false;
 	}
-	if (mk.trim().length < 6) {
-		thongbaoloi("Mật khẩu phải nhiều hơn 6 ký tự!!!");
+
+	// Validate lowercase letters
+	var lowerCaseLetters = /[a-z]/g;
+	if(mk.match(lowerCaseLetters)) {
+		console.log("success")
+	} else {
+		thongbaoloi("Chưa có ký tự viết thường !!!");
 		return false;
 	}
+	
+	// Validate capital letters
+	var upperCaseLetters = /[A-Z]/g;
+	if(mk.match(upperCaseLetters)) {
+		console.log("success")
+	} else {
+		thongbaoloi("Chưa có ký tự viết hoa !!!");
+		return false;
+	}
+	
+	// Validate numbers
+	var numbers = /[0-9]/g;
+	if(mk.match(numbers)) {
+		console.log("success")
+	} else {
+		thongbaoloi("Chưa có ký tự là số !!!");
+		return false;
+	}
+	
+	// Validate length
+	if(mk.length >= 8) {
+		console.log("success")
+	} else {
+		thongbaoloi("Mật khẩu phải dài hơn 8 ký tự !!!");
+		return false;
+	}
+	
 
 	return true;
 }
@@ -77,5 +109,5 @@ function kiemtradiachi(dia_chi){
 }
 
 function tailaitrang() {
-	setTimeout(function () { location.reload(); }, 1000);
+	setTimeout(function () { location.reload(); }, 1500);
   }

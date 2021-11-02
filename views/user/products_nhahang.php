@@ -11,151 +11,7 @@
     </div>
 </div>
 
-<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca">
-    <div class="row">
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="../asset/img/a-dor.jpg" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca"></div>
 <div class="tabcontent_products_nhahang" id="chay_nhahang_chay"></div>
 <div class="tabcontent_products_nhahang" id="quan1_nhahang_quan1"></div>
 <div class="tabcontent_products_nhahang" id="quan3_nhahang_quan3"></div>
@@ -165,6 +21,15 @@
 
 <script>
     $(document).ready(function(){
+
+        getDataOfNhaHang();
+        getDataOfNhaHang_chay();
+        getDataOfNhaHang_quan1();
+        getDataOfNhaHang_quan3();
+        getDataOfNhaHang_quanbinhthanh();
+        getDataOfNhaHang_quanphunhuan();
+        getDataOfNhaHang_quangovap();
+
 
         var i, tabcontent, tablinks;
 
@@ -232,5 +97,290 @@
             show_products_nhahang("btn-nhahang-quangovap","quangovap_nhahang_quangovap")
             
         })
+
+        function getDataOfNhaHang() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+
+            // html += data.map(x => {
+            //     return  "<div class='col-2 item_card_trangchu'><div class='card'><img src='../asset/img_nhahang/" + x.img_nhahang +"' class='card-img-top' alt='" + data[i].img_nhahang + "'><div class='card-body'><p>" + x.ten +"</p><p><small class='card-text'>" + x.dia_chi.slice(0,20) +  "..."  + "</small></p><button type="button" class="btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3" data-toggle="modal" data-target="#form-dang-nhap-card"></div></div></div>"
+            // })
+            
+            html += "</div>";
+            // console.log(html)
+            $("#tatca_nhahang_tatca").html(html);
+        }
+
+        function getDataOfNhaHang_chay() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_chay',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_chay(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_chay(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,15) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#chay_nhahang_chay").html(html);
+        }
+
+        function getDataOfNhaHang_quan1() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_quan1',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_quan1(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_quan1(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#quan1_nhahang_quan1").html(html);
+        }
+
+
+        function getDataOfNhaHang_quan3() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_quan3',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_quan3(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_quan3(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#quan3_nhahang_quan3").html(html);
+        }
+
+        function getDataOfNhaHang_quanbinhthanh() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_quanbinhthanh',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_quanbinhthanh(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_quanbinhthanh(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#quanbinhthanh_nhahang_quanbinhthanh").html(html);
+        }
+
+        function getDataOfNhaHang_quanphunhuan() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_quanphunhuan',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_quanphunhuan(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_quanphunhuan(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#quanphunhuan_nhahang_quanphunhuan").html(html);
+        }
+
+        function getDataOfNhaHang_quangovap() {
+            $.ajax({
+                url: '../api/nha_hang/nha_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataNhaHang_quangovap',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataToCard_quangovap(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataToCard_quangovap(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='" + data[i].img_nhahang + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<a type='button' class='w-100 btn btn-primary mt-3' class='badge text-light' href='../nha_hang/index.php?id=" + data[i].id + "&nha_hang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+
+            $("#quangovap_nhahang_quangovap").html(html);
+        }
     });
 </script>

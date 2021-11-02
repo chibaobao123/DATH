@@ -9,146 +9,7 @@
     </div>
 
     <div id="table_tatca" class="tabcontent_donhang  mt-2">
-        <div class="container table_sanpham text-light my-2">
-            <div class="row title_sanpham_order py-5">
-                <div class="col-3 img_sanpham text-right">
-                    <img src="https://via.placeholder.com/150"/>
-                </div>
-                <div class="col-7 ">
-                    <p class="tittle_sanpham">
-                        Tên sản phẩm
-                    </p>
-                    <p class="nhahang_sanpham">
-                        Tên nhà hàng
-                    </p>
-                    <p class="soluong_sanpham">
-                        số lượng
-                    </p>
-                </div>
-                <div class="col-2 gia_sanpham align-self-center">
-                    <p> Gía sản phẩm </p>
-                </div>
-            </div>
-            <div class="tongtien_sanpham d-flex justify-content-end py-2 my-2">
-                <div class="tong_tien">Tổng tiền</div>
-            </div>
-            <div class="btn_lienhe_nhanhang pb-4 d-flex justify-content-end">
-                <button class="danhanhang">Đã nhận hàng</button>
-                <button class="lienhenguoiban">Liên hệ người bán</button>
-            </div>
-        </div>
-        <div class="container table_sanpham text-light my-2">
-            <div class="row title_sanpham_order py-5">
-                <div class="col-3 img_sanpham text-right">
-                    <img src="https://via.placeholder.com/150"/>
-                </div>
-                <div class="col-7 ">
-                    <p class="tittle_sanpham">
-                        Tên sản phẩm
-                    </p>
-                    <p class="nhahang_sanpham">
-                        Tên nhà hàng
-                    </p>
-                    <p class="soluong_sanpham">
-                        số lượng
-                    </p>
-                </div>
-                <div class="col-2 gia_sanpham align-self-center">
-                    <p> Gía sản phẩm </p>
-                </div>
-            </div>
-            <div class="tongtien_sanpham d-flex justify-content-end py-2 my-2">
-                <div class="tong_tien">Tổng tiền</div>
-            </div>
-            <div class="btn_lienhe_nhanhang pb-4 d-flex justify-content-end">
-                <button class="danhanhang">Đã nhận hàng</button>
-                <button class="lienhenguoiban">Liên hệ người bán</button>
-            </div>
-        </div>
-        <div class="container table_sanpham text-light my-2">
-            <div class="row title_sanpham_order py-5">
-                <div class="col-3 img_sanpham text-right">
-                    <img src="https://via.placeholder.com/150"/>
-                </div>
-                <div class="col-7 ">
-                    <p class="tittle_sanpham">
-                        Tên sản phẩm
-                    </p>
-                    <p class="nhahang_sanpham">
-                        Tên nhà hàng
-                    </p>
-                    <p class="soluong_sanpham">
-                        số lượng
-                    </p>
-                </div>
-                <div class="col-2 gia_sanpham align-self-center">
-                    <p> Gía sản phẩm </p>
-                </div>
-            </div>
-            <div class="tongtien_sanpham d-flex justify-content-end py-2 my-2">
-                <div class="tong_tien">Tổng tiền</div>
-            </div>
-            <div class="btn_lienhe_nhanhang pb-4 d-flex justify-content-end">
-                <button class="danhanhang">Đã nhận hàng</button>
-                <button class="lienhenguoiban">Liên hệ người bán</button>
-            </div>
-        </div>
-        <div class="container table_sanpham text-light my-2">
-            <div class="row title_sanpham_order py-5">
-                <div class="col-3 img_sanpham text-right">
-                    <img src="https://via.placeholder.com/150"/>
-                </div>
-                <div class="col-7 ">
-                    <p class="tittle_sanpham">
-                        Tên sản phẩm
-                    </p>
-                    <p class="nhahang_sanpham">
-                        Tên nhà hàng
-                    </p>
-                    <p class="soluong_sanpham">
-                        số lượng
-                    </p>
-                </div>
-                <div class="col-2 gia_sanpham align-self-center">
-                    <p> Gía sản phẩm </p>
-                </div>
-            </div>
-            <div class="tongtien_sanpham d-flex justify-content-end py-2 my-2">
-                <div class="tong_tien">Tổng tiền</div>
-            </div>
-            <div class="btn_lienhe_nhanhang pb-4 d-flex justify-content-end">
-                <button class="danhanhang">Đã nhận hàng</button>
-                <button class="lienhenguoiban">Liên hệ người bán</button>
-            </div>
-        </div>
-        <div class="container table_sanpham text-light my-2">
-            <div class="row title_sanpham_order py-5">
-                <div class="col-3 img_sanpham text-right">
-                    <img src="https://via.placeholder.com/150"/>
-                </div>
-                <div class="col-7 ">
-                    <p class="tittle_sanpham">
-                        Tên sản phẩm
-                    </p>
-                    <p class="nhahang_sanpham">
-                        Tên nhà hàng
-                    </p>
-                    <p class="soluong_sanpham">
-                        số lượng
-                    </p>
-                </div>
-                <div class="col-2 gia_sanpham align-self-center">
-                    <p> Gía sản phẩm </p>
-                </div>
-            </div>
-            <div class="tongtien_sanpham d-flex justify-content-end py-2 my-2">
-                <div class="tong_tien">Tổng tiền</div>
-            </div>
-            <div class="btn_lienhe_nhanhang pb-4 d-flex justify-content-end">
-                <button class="danhanhang">Đã nhận hàng</button>
-                <button class="lienhenguoiban">Liên hệ người bán</button>
-            </div>
-        </div>
+        
     </div>
 
     <div id="table_choxacnhan" class="tabcontent_donhang table_sanpham"></div>
@@ -164,6 +25,8 @@
 
 <script>
     $(document).ready(function(){
+
+        getDataOfProductsSelect();
 
         var i, tabcontent, tablinks;
 
@@ -227,6 +90,65 @@
 
         });
 
+        function getDataOfProductsSelect() {
+            const arr = window.location.search.substring(1).split('&');
+            // console.log(arr);
+
+            let username = arr[0].slice(9);
+            // console.log(username);
+
+            $.ajax({
+                url: '../api/don_hang/don_hang.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataOfProductsSelect',
+                    username: username,
+                },
+                success: function(data) {
+                    console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    addDataOfProductsSelect(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataOfProductsSelect(data){
+            let html = "";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                html += "<div class='container table_sanpham text-light my-2'>"
+                html += "<div class='row title_sanpham_order py-5'>"
+
+                if(data[i].img_monan == ''){
+                    html += "<div class='col-3 img_sanpham text-right'><img src='https://via.placeholder.com/150'/></div>"
+                } else {
+                    html += "<div class='col-3 img_sanpham text-right'><img src='../asset/img_products/" + data[i].img_monan + "'/></div>"
+                }
+
+                html += "<div class='col-7 '>"
+                html += "<p class='tittle_sanpham' ma_monan='" + data[i].ma_monan + "'>" + data[i].ten_monan + "</p>"
+                html += "<p class='nhahang_sanpham' ma_nhahang='" + data[i].ma_nhahang + "'>" + data[i].ten_nhahang + "</p>"
+                html += "<p class='soluong_sanpham'>" + data[i].so_luong + "</p>"
+                html += "</div>"
+                html += "<div class='col-2 gia_sanpham align-self-center'>"
+                html += "<p> " + (data[i].gia_tien).toLocaleString('vi-VN')+ " </p>"
+                html += "</div>"
+                html += "</div>"
+                html += "<div class='tongtien_sanpham d-flex justify-content-end py-2 my-2'>"
+                html += "<div class='tong_tien pr-5'>Tổng tiền: <span class='tong_tien pr-5'>" + (data[i].gia_tien  * data[i].so_luong).toLocaleString('vi-VN') + "</span></div>"
+                html += "</div>"
+                html += "<div class='btn_lienhe_nhanhang pb-4 d-flex justify-content-end'>"
+                html += "<button class='danhanhang'>Đã nhận hàng</button>"
+                html += "<button class='lienhenguoiban'>Liên hệ người bán</button>"
+                html += "</div>"
+                html += "</div>"
+            }
+
+            $("#table_tatca").html(html);
+        }
 
 
     });

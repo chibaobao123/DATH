@@ -49,30 +49,40 @@
         include('../views/layouts/header.php');
       ?>
     </section>
-
-    <section class="profile_khachhang_layout">
-      <?php
-        include("../views/thong_tin_khach_hang/profile_khach_hang.php");
-      ?>
-    </section>
-
-    <section class="form_sua_thong_tin">
-      <?php
-        include("../views/thong_tin_khach_hang/form_sua_thong_tin.php");
-      ?>
-    </section>
-
-    <section class="body_thong_tin_khach_hang container pb-5">
-      <section class="thongitn_khachhang_layout pb-5">
+    <section class='body_page_begin'>
+      <section class="profile_khachhang_layout">
         <?php
-          include("../views/thong_tin_khach_hang/thong_tin_khach_hang.php");
+          include("../views/thong_tin_khach_hang/profile_khach_hang.php");
         ?>
       </section>
-      <section class="thongitn_donhang_layout pb-5">
+
+      <section class="form_sua_thong_tin">
         <?php
-          include("../views/thong_tin_khach_hang/don_hang.php");
+          include("../views/thong_tin_khach_hang/form_sua_thong_tin.php");
         ?>
       </section>
+
+      <section class="body_thong_tin_khach_hang container pb-5">
+        <section class="thongitn_khachhang_layout pb-5">
+          <?php
+            include("../views/thong_tin_khach_hang/thong_tin_khach_hang.php");
+          ?>
+        </section>
+        <section class="thongitn_donhang_layout pb-5">
+          <?php
+            include("../views/thong_tin_khach_hang/don_hang.php");
+          ?>
+        </section>
+      </section>
+    </section>
+
+    <section class="body_trang_user container body_page_search d-none">
+        <div class='close_search_body d-flex justify-content-end py-4'>
+          <button type='button' class='btn btn-primary close_search_body_button'><i class='fas fa-times' style='font-size: 20px;'></i></button>
+        </div>
+        <div class="body_page_search_data">
+
+        </div>
     </section>
 
     <section class="footer_trangchu">

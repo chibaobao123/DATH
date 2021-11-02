@@ -50,17 +50,29 @@
       ?>
     </section>
     
-    <section class="body_thong_tin_nha_hang container py-5">
-      <section class="thongitn_nhahang_layout pb-5">
-        <?php
-          include("../views/nha_hang/Profile_nha_hang.php");
-        ?>
+    <section class='body_page_begin'>
+      <section class="body_thong_tin_nha_hang container py-5">
+        <section class="thongitn_nhahang_layout pb-5">
+          <?php
+            include("../views/nha_hang/Profile_nha_hang.php");
+          ?>
+        </section>
+        <section class="products_nhahang_layout pb-5">
+          <?php
+            include("../views/nha_hang/products_nhahang.php");
+          ?>
+        </section>
       </section>
-      <section class="products_nhahang_layout pb-5">
-        <?php
-          include("../views/nha_hang/products_nhahang.php");
-        ?>
-      </section>
+    </section>
+
+
+    <section class="body_trang_user container body_page_search d-none">
+        <div class='close_search_body d-flex justify-content-end py-4'>
+          <button type='button' class='btn btn-primary close_search_body_button'><i class='fas fa-times' style='font-size: 20px;'></i></button>
+        </div>
+        <div class="body_page_search_data">
+
+        </div>
     </section>
 
     <section class="footer_trangchu">

@@ -8,8 +8,7 @@
     </div>
 
     <div class="col-5 d-flex">
-      <input class="input-search-navbar" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn-search-navbar"><i class="fas fa-search"></i></button>
+        
     </div>
 
     <div class="col-2"></div>
