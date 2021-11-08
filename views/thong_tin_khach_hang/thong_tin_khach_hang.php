@@ -106,7 +106,7 @@
                     username: username,
                 },
                 success: function(data) {
-                    console.log(data);
+                    // console.log(data);
                     let data_profile = $.parseJSON(data);
                     addDataOfProductsSelect(data_profile);
                 }

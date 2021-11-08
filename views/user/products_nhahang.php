@@ -11,13 +11,34 @@
     </div>
 </div>
 
-<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca"></div>
-<div class="tabcontent_products_nhahang" id="chay_nhahang_chay"></div>
-<div class="tabcontent_products_nhahang" id="quan1_nhahang_quan1"></div>
-<div class="tabcontent_products_nhahang" id="quan3_nhahang_quan3"></div>
-<div class="tabcontent_products_nhahang" id="quanbinhthanh_nhahang_quanbinhthanh"></div>
-<div class="tabcontent_products_nhahang" id="quanphunhuan_nhahang_quanphunhuan"></div>
-<div class="tabcontent_products_nhahang" id="quangovap_nhahang_quangovap"></div>
+<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca">
+    <div id="tatca_nhahang_tatca_body"></div>
+    <div id="tatca_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="chay_nhahang_chay">
+    <div id="chay_nhahang_chay_body"></div>
+    <div id="chay_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quan1_nhahang_quan1">
+    <div id="quan1_nhahang_quan1_body"></div>
+    <div id="quan1_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quan3_nhahang_quan3">
+    <div id="quan3_nhahang_quan3_body"></div>
+    <div id="quan3_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quanbinhthanh_nhahang_quanbinhthanh">
+    <div id="quanbinhthanh_nhahang_quanbinhthanh_body"></div>
+    <div id="quanbinhthanh_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quanphunhuan_nhahang_quanphunhuan">
+    <div id="quanphunhuan_nhahang_quanphunhuan_body"></div>
+    <div id="quanphunhuan_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quangovap_nhahang_quangovap">
+    <div id="quangovap_nhahang_quangovap_body"></div>
+    <div id="quangovap_nhahang_paginations"></div>
+</div>
 
 <script>
     $(document).ready(function(){
@@ -109,7 +130,25 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard(data_profile);
+                    // console.log(data_profile);   
+                    $("#tatca_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard(data);
+                            // console.log(html);
+
+                            $("#tatca_nhahang_tatca_body").html(html);
+                        }
+                    })
+                    // addDataToCard(data_profile);
                 }
             });
         }
@@ -138,8 +177,9 @@
             // })
             
             html += "</div>";
+            return html;
             // console.log(html)
-            $("#tatca_nhahang_tatca").html(html);
+            // $("#tatca_nhahang_tatca").html(html);
         }
 
         function getDataOfNhaHang_chay() {
@@ -153,7 +193,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_chay(data_profile);
+                    $("#chay_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_chay(data);
+                            // console.log(html);
+
+                            $("#chay_nhahang_chay_body").html(html);
+                        }
+                    })
+                    // addDataToCard_chay(data_profile);
                 }
             });
         }
@@ -178,8 +235,9 @@
             }
             
             html += "</div>";
-
-            $("#chay_nhahang_chay").html(html);
+            
+            return html;
+            // $("#chay_nhahang_chay").html(html);
         }
 
         function getDataOfNhaHang_quan1() {
@@ -193,7 +251,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quan1(data_profile);
+                    $("#quan1_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_quan1(data);
+                            // console.log(html);
+
+                            $("#quan1_nhahang_quan1_body").html(html);
+                        }
+                    })
+                    // addDataToCard_quan1(data_profile);
                 }
             });
         }
@@ -219,7 +294,9 @@
             
             html += "</div>";
 
-            $("#quan1_nhahang_quan1").html(html);
+            return html;
+
+            // $("#quan1_nhahang_quan1").html(html);
         }
 
 
@@ -234,7 +311,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quan3(data_profile);
+                    $("#quan3_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_quan3(data);
+                            // console.log(html);
+
+                            $("#quan3_nhahang_quan3_body").html(html);
+                        }
+                    })
+                    // addDataToCard_quan3(data_profile);
                 }
             });
         }
@@ -260,7 +354,8 @@
             
             html += "</div>";
 
-            $("#quan3_nhahang_quan3").html(html);
+            return html;
+            // $("#quan3_nhahang_quan3").html(html);
         }
 
         function getDataOfNhaHang_quanbinhthanh() {
@@ -274,7 +369,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quanbinhthanh(data_profile);
+                    $("#quanbinhthanh_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_quanbinhthanh(data);
+                            // console.log(html);
+
+                            $("#quanbinhthanh_nhahang_quanbinhthanh_body").html(html);
+                        }
+                    })
+                    // addDataToCard_quanbinhthanh(data_profile);
                 }
             });
         }
@@ -300,7 +412,8 @@
             
             html += "</div>";
 
-            $("#quanbinhthanh_nhahang_quanbinhthanh").html(html);
+            return html;
+            // $("#quanbinhthanh_nhahang_quanbinhthanh").html(html);
         }
 
         function getDataOfNhaHang_quanphunhuan() {
@@ -314,7 +427,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quanphunhuan(data_profile);
+                    $("#quanphunhuan_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_quanphunhuan(data);
+                            // console.log(html);
+
+                            $("#quanphunhuan_nhahang_quanphunhuan_body").html(html);
+                        }
+                    })
+                    // addDataToCard_quanphunhuan(data_profile);
                 }
             });
         }
@@ -340,7 +470,8 @@
             
             html += "</div>";
 
-            $("#quanphunhuan_nhahang_quanphunhuan").html(html);
+            return html;
+            // $("#quanphunhuan_nhahang_quanphunhuan").html(html);
         }
 
         function getDataOfNhaHang_quangovap() {
@@ -354,7 +485,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quangovap(data_profile);
+                    $("#quangovap_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 6,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataToCard_quangovap(data);
+                            // console.log(html);
+
+                            $("#quangovap_nhahang_quangovap_body").html(html);
+                        }
+                    })
+                    // addDataToCard_quangovap(data_profile);
                 }
             });
         }
@@ -380,7 +528,8 @@
             
             html += "</div>";
 
-            $("#quangovap_nhahang_quangovap").html(html);
+            return html;
+            // $("#quangovap_nhahang_quangovap").html(html);
         }
     });
 </script>

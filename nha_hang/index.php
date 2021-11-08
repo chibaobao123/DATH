@@ -44,6 +44,9 @@
     <!-- validation -->
     <script src="../library/validate/validation.js"></script>
 
+    <!-- pagination_js -->
+    <script src="../library/pagination_js/pagination.js"></script>
+
     <section class="header_user">
       <?php
         include('../views/layouts/header.php');

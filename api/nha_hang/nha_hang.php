@@ -2,6 +2,31 @@
 
     include("../../config/config.php");
 
+	if (isset($_GET['action']) && $_GET['action'] == 'getDataNhaHangOfMaNhaHang') {
+		$ma_nhahang = $_GET['ma_nhahang'];
+
+        $sql = "SELECT * FROM nha_hang WHERE  ma_nhahang = '$ma_nhahang'";
+		$rs = mysqli_query($db, $sql);
+		$json_response = array();
+		
+		while($row = mysqli_fetch_row($rs)) {
+			$r['id'] = $row['0'];
+			$r['ma_nhahang'] = $row['1'];
+			$r['ten'] = $row['2'];
+			$r['sdt'] = $row['3'];
+			$r['dia_chi'] = $row['4'];
+			$r['img_nhahang'] = $row['5'];
+			$r['the_loai'] = $row['6'];
+			$r['gio_mo_cua'] = $row['7'];
+			$r['gio_dong_cua'] = $row['8'];
+			$r['gia_tien_thap'] = $row['9'];
+			$r['gia_tien_cao'] = $row['10'];
+			array_push($json_response, $r);
+		}
+		
+		echo json_encode($json_response);
+    }
+
 	if (isset($_GET['action']) && $_GET['action'] == 'getDataNhaHangOfId') {
 
 		$id = $_GET['id'];

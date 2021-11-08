@@ -1,7 +1,47 @@
 <div class='container text-white my-4 py-5 px-0 profile_khachhang rounded rounded-pill' id='profile_khachhang'></div>
 
+<div class="modal fade" id="form_chinhsua_img" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div id="btn-chon-anh" class='d-flex justify-content-center'>
+                    <button id='chon_anh' class=''>Chọn ảnh từ thư viện</button>
+                </div>
+                <div id="old_img_avatar" class='d-flex justify-content-center'>
+
+                </div>
+                <form action="upload.php"
+                    id="form_upload_anh" 
+                    method="post"
+                    enctype="multipart/form-data">
+
+                    <input type="file"
+                        class="d-none"
+                        id="chossen_file_img">
+
+                    <input type="submit" 
+                        class="d-none"
+                        id="submit" 
+                        value="Cập nhật ảnh">
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function() {
+
+        
 
         getProfile();
 
@@ -27,18 +67,21 @@
 
         function addProfile(data) {
             let html = "";
+            let old_img_avatar = "";
             for (let i = 0; i < data.length; i++) {
                 html += "<div class='row'>";
                     html += "<div class='col-3 d-flex justify-content-center align-items-center container-img-avatar-profile'>";
 
                     if(data[i].avatar == ''){
                         html += "<img class='img-avatar-profile rounded-circle' src='https://via.placeholder.com/150' height='200' width='200'/>";
+                        old_img_avatar += "<img class='img-avatar-profile-preview rounded-circle' src='https://via.placeholder.com/150' height='200' width='200'/>";
                     } else {
                         html += "<img class='img-avatar-profile rounded-circle' src='../asset/img_user/" + data[i].avatar +"' height='200' width='200'/>";
+                        old_img_avatar += "<img class='img-avatar-profile-preview rounded-circle' src='../asset/img_user/" + data[i].avatar +"' height='200' width='200'/>";
                     }
 
                     html += "<div class='middle'>";
-                    html += "<button class='btn btn-secondary'>Chỉnh sửa</button>";
+                    html += "<button class='btn btn-secondary' data-toggle='modal' data-target='#form_chinhsua_img'>Chỉnh sửa</button>";
                     html += "</div>";
                     html+= "</div>";
                     html += "<div class='col-5'>";
@@ -86,7 +129,42 @@
             }
             
             // console.log(html)
+
             $('.profile_khachhang').html(html)
+            $('#old_img_avatar').html(old_img_avatar)
         }
+
+        $('#chon_anh').click(function() {
+
+            $('#chossen_file_img').trigger('click');
+
+            $('#chossen_file_img').on('change', function(e) {
+
+                event.preventDefault();
+
+                const previewImage = $('.img-avatar-profile-preview');
+
+                var b = $('#chossen_file_img').val();
+
+                // console.log(b);
+
+                const file = this.files[0];
+                console.log(file);
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.addEventListener("load", function() {
+                        console.log(this.result);
+                        previewImage.attr("src", this.result);
+                    });
+
+                    reader.readAsDataURL(file);
+                }
+                    
+            })
+        })
+
+        
     })
 </script>

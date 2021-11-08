@@ -61,7 +61,7 @@
       </section>
 
       <section class="body_trang_user container pt-1 pb-5">
-        <section class="products_nhahang pb-5">
+        <section class="products_nhahang">
           <?php
             include("../views/user/products_nhahang.php");
           ?>

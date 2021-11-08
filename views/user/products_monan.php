@@ -12,148 +12,8 @@
 </div>
 
 <div class="tabcontent_products_monan" id="tatca_monan_tatca">
-    <div class="row">
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="../asset/img/nhapham.jpg" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <button href="#" class="btn btn-primary mt-3 w-100">Chi tiết</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="tatca_monan_tatca_body"></div>
+    <div id="tatca_monan_paginations"></div>
 </div>
 
 <div class="tabcontent_products_monan" id="doan_monan_doan"></div>
@@ -164,6 +24,8 @@
 
 <script>
     $(document).ready(function(){
+
+        getDataOfMonAn();
 
         var i, tabcontent, tablinks;
 
@@ -227,5 +89,71 @@
             show_products_monan("btn-monan-trangmieng","trangmieng_monan_trangmieng")
             
         })
+
+        function getDataOfMonAn() {
+            $.ajax({
+                url: '../api/san_pham/san_pham.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataSanPham',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    console.log(data_profile);   
+                    $("#tatca_monan_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 18,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                             var html = addDataMonAnToCard(data);
+                            // console.log(html);
+
+                            $("#tatca_monan_tatca_body").html(html);
+                        }
+                    })
+                    // addDataToCard(data_profile);
+                }
+            });
+        }
+
+        
+        function addDataMonAnToCard(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_products/" + data[i].img_monan + "' class='card-img-top' alt='" + data[i].img_monan + "'>"
+                            html += "<div class='card-body'>"
+                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                            html += "<div class='d-flex mt-3'>"
+                            html += "<a type='button' class='w-25 p-1 btn btn-primary mr-1' class='badge text-light'><i class='fas fa-cart-plus'></i></a>";
+                            html += "<a type='button' class='w-75 text-white btn btn-primary' class='badge text-light' style='font-size:0.7rem' href='../san_pham/index.php?id=" + data[i].id + "&ma_monan=" + data[i].ma_monan + "&ma_nhahang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
+                            html += "</div>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+
+            // html += data.map(x => {
+            //     return  "<div class='col-2 item_card_trangchu'><div class='card'><img src='../asset/img_nhahang/" + x.img_nhahang +"' class='card-img-top' alt='" + data[i].img_nhahang + "'><div class='card-body'><p>" + x.ten +"</p><p><small class='card-text'>" + x.dia_chi.slice(0,20) +  "..."  + "</small></p><button type="button" class="btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3" data-toggle="modal" data-target="#form-dang-nhap-card"></div></div></div>"
+            // })
+            
+            html += "</div>";
+            return html;
+            // console.log(html)
+            // $("#tatca_nhahang_tatca").html(html);
+        }
     });
 </script>

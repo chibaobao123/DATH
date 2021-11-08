@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 07:56 AM
+-- Generation Time: Nov 03, 2021 at 02:45 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -73,7 +73,8 @@ CREATE TABLE `mon_an` (
 --
 
 INSERT INTO `mon_an` (`id`, `ma_monan`, `ten`, `gia_tien`, `img_monan`, `ma_nhahang`, `dia_chi`, `danh_gia`, `the_loai`, `da_ban`, `tinh_trang`) VALUES
-(1, 'bundaumamtom', 'Bún đậu mắm tôm', 55000, 'BunDauMamTom.jpg', 'nangMo', '852 Quang Trung, Phường 8, Gò Vấp', 5, 'món ăn, bún đậu mắm tôm', 1213, 1);
+(1, 'bundaumamtom', 'Bún đậu mắm tôm', 55000, 'BunDauNangMo.jpg', 'nangMo', '852 Quang Trung, Phường 8, Gò Vấp', 5, 'món ăn, bún đậu mắm tôm', 1213, 1),
+(2, 'ColdBrewDauTam', 'Cold brew dâu tằm', 40000, 'coldBrewDauTam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 5, 'quán nước, món nước', 125, 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,7 @@ CREATE TABLE `nha_hang` (
 
 INSERT INTO `nha_hang` (`id`, `ma_nhahang`, `ten`, `sdt`, `dia_chi`, `img_nhahang`, `the_loai`, `gio_mo_cua`, `gio_dong_cua`, `gia_tien_thap`, `gia_tien_cao`) VALUES
 (1, 'ador', 'A\'Dor', '0127557878', '118 Đường 3/2, Quận 10, Phường 12', 'ADor.jpg', 'Quán Nước', '8:00', '22:00', '40.000', '200.000'),
-(2, 'nhapham', 'Nhà Phạm', '0127557878', '129 Đinh Tiên Hoàng, quận Bình Thạnh, phường 3', 'NhaPham.jpg', 'Quán nước', '9:00', '17:00', '30.000', '100.000'),
+(2, 'nhapham', 'Nhà Phạm', '0127557878', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 'NhaPham.jpg', 'Quán nước', '9:00', '17:00', '30.000', '100.000'),
 (3, 'baristaCollective', 'Barista Collective', '0909789255', '41 Hồ Xuân Hương, Quận 3, Phường 6', 'baristaCollective.jpg', 'Quán nước', '7:00', '19:00', '40.000', '300.000'),
 (4, 'workshop', 'The Workshop Coffee', '0909789244', '27 Ngô Đức Kế, Bến Nghé, Quận 1', 'workshop.jpg', 'Quán nước', '8:00', '17:00', '50.000', '500.000'),
 (5, 'thaiYen', 'Thái Yên', '0989750180', '79/2/1 Phan Kế Bính, Qhường Đa Kao, Quận 1 ', 'ThaiYen.jpg', 'Quán nước ', '8:00', '21:00', '30.000', '100.000'),
@@ -110,7 +111,8 @@ INSERT INTO `nha_hang` (`id`, `ma_nhahang`, `ten`, `sdt`, `dia_chi`, `img_nhahan
 (8, 'busan', 'Busan Korean Food', '0915199288', '5 Lê Văn Duyệt, Phường 3, Bình Thạnh', 'busan.jpg', 'Quán ăn', '10:00', '21:00', '40.000', '300.000'),
 (9, 'sumobbq', 'Sumo BBQ', '0127557584', '59B Cao Thắng, Quận 3', 'sumobbq.jpg', 'Quán ăn', '11:00', '22:00', '239.000', '378.000'),
 (10, 'kingbbq', 'King BBQ', '0905485613', '205 Phan Xích Long, P. 2, Quận Phú Nhuận', 'kingbbq.jpg', 'Quán ăn', '10:00', '21:15', '150.000', '450.000'),
-(11, 'manwah', 'MANWAH ', '02873006383', 'Manwah Lotte Phan Văn Trị - Lô 1F2 Tầng 1, TTTM Lotte Mart Gò Vấp, Số 18 Phan Văn Trị, Phường 10, Quận Gò Vấp', 'manwah.jpg', 'Quán ăn', '10:00', '22:00', '150.000', '500.000');
+(11, 'manwah', 'MANWAH ', '02873006383', 'Manwah Lotte Phan Văn Trị - Lô 1F2 Tầng 1, TTTM Lotte Mart Gò Vấp, Số 18 Phan Văn Trị, Phường 10, Quận Gò Vấp', 'manwah.jpg', 'Quán ăn', '10:00', '22:00', '150.000', '500.000'),
+(12, 'thuyenvien', 'Thuyền Viên', '02838432643', '11-13 Nguyễn Văn Đậu, Phường 5, Phú Nhuận, Thành phố Hồ Chí Minh, Việt Nam', 'thuyenVien.jpg', 'quán ăn, quán chay', '7:00', '22:00', '20000', '200000');
 
 -- --------------------------------------------------------
 
@@ -216,13 +218,13 @@ ALTER TABLE `don_hang`
 -- AUTO_INCREMENT for table `mon_an`
 --
 ALTER TABLE `mon_an`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `nha_hang`
 --
 ALTER TABLE `nha_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tai_khoan`

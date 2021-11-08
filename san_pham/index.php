@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <?php
-      include("../sessions/session.php");
+      include("../sessions/session_page.php");
     ?>
-    <title>Trang chủ</title>
+    <title><?php echo $_SESSION['login_user'] ?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/layouts.css">
 
     <!-- css layout trang_chu.css -->
-    <link rel="stylesheet" href="../css/trang_chu.css">
+    <link rel="stylesheet" href="../css/san_pham.css">
 
     <!-- toast -->
     <link rel="stylesheet" href="../library/toast/jquery.toast.min.css">
@@ -43,58 +43,33 @@
 
     <!-- validation -->
     <script src="../library/validate/validation.js"></script>
-    
+
     <!-- pagination_js -->
     <script src="../library/pagination_js/pagination.js"></script>
 
-    <section class="header_trangchu">
+    <section class="header_user">
       <?php
-        include("../views/layouts/trang_chu/header.php");
+        include('../views/layouts/header.php');
       ?>
     </section>
-
-    <section class="form_dang_ky">
-      <?php
-        include("../views/trang_chu/form_dang_ky.php");
-      ?>
-    </section>
-
-    <section class="form_dang_nhap">
-      <?php
-        include("../views/trang_chu/form_dang_nhap.php");
-      ?>
-    </section>
-
-    <section class="form_dang_nhap_dang_ky">
-      <?php
-        include("../views/trang_chu/form_dangnhap_dangky.php");
-      ?>
-    </section>
-
-    <section class="carousel">
-      <?php
-        include("../views/layouts/carousel.php");
-      ?>
-    </section>
-
-    <section class="body_trang_chu container pt-1 pb-5">
-      <section class="products_nhahang pb-5">
-        <?php
-          include("../views/trang_chu/products_nhahang.php");
-        ?>
+    
+    <section class='body_page_begin'>
+      <section class="body_thong_tin_nha_hang container ">
+        <section class="thongitn_nhahang_layout pt-2">
+          <?php
+            include("../views/san_pham/san_pham.php");
+          ?>
+        </section>
       </section>
+    </section>
 
-      <section class="products_nhahang border-top border-light">
-        <?php
-          include("../views/trang_chu/products_monan.php");
-        ?>
-      </section>
 
-      <section class="products_nhahang border-top border-light">
-        <?php
-          include("../views/trang_chu/products_monnuoc.php");
-        ?>
-      </section>
+    <section class="body_trang_user container body_page_search d-none">
+        <div class='close_search_body d-flex justify-content-end py-4'>
+          <button type='button' class='btn btn-primary close_search_body_button'><i class='fas fa-times' style='font-size: 20px;'></i></button>
+        </div>
+        <div class="body_page_search_data">
+        </div>
     </section>
 
     <section class="footer_trangchu">

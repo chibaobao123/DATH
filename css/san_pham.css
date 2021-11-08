@@ -3,25 +3,21 @@ body{
 }
 
 /* body_trang_chu */
+.body_thong_tin_nha_hang{
+    background-color: #001533;
+}
+
+/* body_trang_chu */
 .body_trang_user{
     background-color: #001533;
 }
 
-/* products_nhahang.php */
-
-.btn_choose_kindof_products button{
-    border: none;
-    margin: 0px 10px ;
-    padding: 0px;
-    background-color: #001533;
-    color: white;
+/* profile_nhahang */
+.profile_sanpham, .profile_nhahang_sanpham{
+    background-color: #3949ab; 
 }
 
-.btn_choose_kindof_products button:focus, .btn_choose_kindof_products button:focus-visible{
-    outline: none;
-    box-shadow: none;
-    border:none;
-}
+/* card */
 
 .item_card_trangchu{
     width: 100%;
@@ -58,10 +54,12 @@ body{
 .item_card_trangchu .card-body button{
     position: absolute;
     inset: 9rem 0rem 0rem 0;
+}
+
+.table_sanpham{
+    background-color: #222e7c;
+    border-radius: 10px;
 } */
-
-
-
 
 
 /* footer.php */
