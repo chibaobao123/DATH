@@ -10,157 +10,30 @@
 </div>
 
 <div class="tabcontent_products_douong" id="tatca_douong_tatca">
-    <div class="row">
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="../asset/img/laviet.jpg" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 item_card_trangchu">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="https://via.placeholder.com/150">
-                <div class="card-body">
-                    <p>Card title</p>
-                    <small class="card-text">28/15 đường só 2, p3, quận Gò Váp</small>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="tatca_monnuoc_tatca_body" style="height: 600px;"></div>
+    <div id="tatca_monnuoc_paginations"></div>
 </div>
-
-<div class="tabcontent_products_douong" id="trasua_douong_trasua"></div>
-<div class="tabcontent_products_douong" id="nuoctraicay_douong_nuoctraicay"></div>
-<div class="tabcontent_products_douong" id="sua_douong_sua"></div>
-<div class="tabcontent_products_douong" id="khac_douong_khac"></div>
+<div class="tabcontent_products_douong" id="trasua_douong_trasua">
+    <div id="trasua_monnuoc_trasua_body" style="height: 600px;"></div>
+    <div id="trasua_monnuoc_paginations"></div>
+</div>
+<div class="tabcontent_products_douong" id="nuoctraicay_douong_nuoctraicay">
+    <div id="nuoctraicay_monnuoc_nuoctraicay_body" style="height: 600px;"></div>
+    <div id="nuoctraicay_monnuoc_paginations"></div>
+</div>
+<div class="tabcontent_products_douong" id="sua_douong_sua">
+    <div id="sua_monnuoc_sua_body" style="height: 600px;"></div>
+    <div id="sua_monnuoc_paginations"></div>
+</div>
+<div class="tabcontent_products_douong" id="khac_douong_khac">
+    <div id="khac_monnuoc_khac_body" style="height: 600px;"></div>
+    <div id="khac_monnuoc_paginations"></div>
+</div>
 
 <script>
     $(document).ready(function(){
+
+        getDataOfMonNuoc()
 
         var i, tabcontent, tablinks;
 
@@ -218,5 +91,72 @@
             show_products_douong("btn-douong-khac","khac_douong_khac")
             
         })
+
+        function getDataOfMonNuoc() {
+            $.ajax({
+                url: '../api/san_pham/san_pham.php',
+                type: 'GET',
+                cache: false,
+                data: {
+                    action : 'getDataSanPham_monnuoc',
+                },
+                success: function(data) {
+                    // console.log(data);
+                    let data_profile = $.parseJSON(data);
+                    $("#tatca_monnuoc_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#tatca_monnuoc_tatca_body").html(html);
+                        }
+                    })
+                    
+                }
+            });
+        }
+
+        function addDataToCard(data){
+            let html = "";
+            html += "<div class='row'>";
+
+            for (let i = 0; i < data.length; i++) {
+                // let j = Math.floor((Math.random() * data.length));
+
+                    html += "<div class='col-2 item_card_trangchu'>"
+                        html += "<div class='card'>"
+                        html += "<img src='../asset/img_products/" + data[i].img_monan + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
+                            html += "<div class='card-body'>"
+
+                            if(data[i].ten.length > 12){
+                                html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            } else {
+                                html += "<p><b>" + data[i].ten + "</b></p>"
+                            }
+
+                            if(data[i].dia_chi.length > 15){
+                                html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,15) + " ... " + "</small></p>"
+                            } else {
+                                html += "<p><small class='card-text'>" + data[i].dia_chi + " ... " + "</small></p>"
+                            }
+                            
+                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
+                            html += "</div>"
+                        html += "</div>"
+                    html += "</div>"
+            }
+            
+            html += "</div>";
+            return html;
+            
+        }
+
     });
 </script>

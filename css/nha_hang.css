@@ -45,12 +45,19 @@ body{
     background-color: #101748;
 } */
 
+.products_nhahang_layout .products_body{
+    height: 62.5rem;
+}
+
+.products_nhahang_layout .products_body .body_paginations {
+    height: 56.25rem;
+}
 
 /* card */
 
 .item_card_trangchu{
     width: 100%;
-    height: 400px;
+    height: 300px;
 }
 
 .item_card_trangchu{
@@ -71,11 +78,11 @@ body{
 
 .item_card_trangchu .card-body{
     padding: 5px;
-    height: 200px;
-    position: relative;
+    /* height: 200px;
+    position: relative; */
 }
 
-.item_card_trangchu .card-body .content_card_trangchu{
+/* .item_card_trangchu .card-body .content_card_trangchu{
     position: absolute;
     inset: 5rem 0 3rem 0.4rem;
 }
@@ -83,7 +90,9 @@ body{
 .item_card_trangchu .card-body button{
     position: absolute;
     inset: 9rem 0rem 0rem 0;
-}
+} */
+
+
 
 
 /* footer.php */

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2021 at 02:45 AM
+-- Generation Time: Nov 09, 2021 at 08:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -74,7 +74,25 @@ CREATE TABLE `mon_an` (
 
 INSERT INTO `mon_an` (`id`, `ma_monan`, `ten`, `gia_tien`, `img_monan`, `ma_nhahang`, `dia_chi`, `danh_gia`, `the_loai`, `da_ban`, `tinh_trang`) VALUES
 (1, 'bundaumamtom', 'Bún đậu mắm tôm', 55000, 'BunDauNangMo.jpg', 'nangMo', '852 Quang Trung, Phường 8, Gò Vấp', 5, 'món ăn, bún đậu mắm tôm', 1213, 1),
-(2, 'ColdBrewDauTam', 'Cold brew dâu tằm', 40000, 'coldBrewDauTam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 5, 'quán nước, món nước', 125, 1);
+(2, 'ColdBrewDauTam', 'Cold brew dâu tằm', 40000, 'coldBrewDauTam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 5, 'quán nước, món nước', 125, 1),
+(3, 'phinDrip', 'Phin Drip', 30000, 'phinDrip.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước', 90, 1),
+(4, 'traAtiso', 'Trà Atiso', 40000, 'traAtiso.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước ', 32, 1),
+(5, 'suaGao', 'Sữa Gạo', 35000, 'suaGao.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước', 21, 1),
+(6, 'caPheSua', 'Cà Phê Sữa ', 35000, 'caPheSua.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 45, 1),
+(7, 'expresso', 'Exresso', 35000, 'expresso.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước ', 55, 1),
+(8, 'latte', 'Latte', 45000, 'latte.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 65, 1),
+(9, 'americano', 'Americano', 40000, 'americano.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước ', 23, 1),
+(10, 'caPheSuongSam', 'Ca Phê Sương Sâm', 40000, 'capheSuongsam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 45, 1),
+(11, 'suaGaoKemDua', 'Sữa Gạo Kem Dừa ', 45000, 'suagaokemdua.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước', 45, 1),
+(12, 'caramelMacchiato', 'Caramel Macchiato', 50000, 'caramelMacchiato.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước', 33, 1),
+(13, 'caPheChanh', 'Cà phê chanh', 45000, 'caPheChanh.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước', 45, 1),
+(14, 'coldBrewAtiso', 'Cold brew atiso', 45000, 'coldBrewAtiso', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 56, 1),
+(16, 'caPheChuoi', 'Cà phê chuối', 50000, 'caPheChuoi', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 3, 'món nước ', 45, 1),
+(17, 'suaGaoSuongSam', 'Sữa gạo sương sâm', 40000, 'suaGaoSuongSam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 45, 1),
+(18, 'capucchino', 'Capucchino', 40000, 'capucchino.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước', 89, 1),
+(19, 'mocha', 'Mocha', 40000, 'mocha.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 30, 1),
+(20, 'tacEp', 'Tắc ép', 40000, 'tacEp.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước ', 67, 1),
+(21, 'sinhToChuoiDauTam', 'Sinh tố chuối dâu tằm', 50000, 'sinhToChuoiDauTam.jpg', 'nhapham', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 4, 'món nước, sinh tố', 29, 1);
 
 -- --------------------------------------------------------
 
@@ -102,7 +120,7 @@ CREATE TABLE `nha_hang` (
 
 INSERT INTO `nha_hang` (`id`, `ma_nhahang`, `ten`, `sdt`, `dia_chi`, `img_nhahang`, `the_loai`, `gio_mo_cua`, `gio_dong_cua`, `gia_tien_thap`, `gia_tien_cao`) VALUES
 (1, 'ador', 'A\'Dor', '0127557878', '118 Đường 3/2, Quận 10, Phường 12', 'ADor.jpg', 'Quán Nước', '8:00', '22:00', '40.000', '200.000'),
-(2, 'nhapham', 'Nhà Phạm', '0127557878', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 'NhaPham.jpg', 'Quán nước', '9:00', '17:00', '30.000', '100.000'),
+(2, 'nhapham', 'Nhà Phạm', '0127557878', '93/30 Hoàng Hoa Thám, quận Bình Thạnh, phường 3', 'NhaPham.jpg', 'Quán nước', '8:00', '18:00', '30.000', '100.000'),
 (3, 'baristaCollective', 'Barista Collective', '0909789255', '41 Hồ Xuân Hương, Quận 3, Phường 6', 'baristaCollective.jpg', 'Quán nước', '7:00', '19:00', '40.000', '300.000'),
 (4, 'workshop', 'The Workshop Coffee', '0909789244', '27 Ngô Đức Kế, Bến Nghé, Quận 1', 'workshop.jpg', 'Quán nước', '8:00', '17:00', '50.000', '500.000'),
 (5, 'thaiYen', 'Thái Yên', '0989750180', '79/2/1 Phan Kế Bính, Qhường Đa Kao, Quận 1 ', 'ThaiYen.jpg', 'Quán nước ', '8:00', '21:00', '30.000', '100.000'),
@@ -164,7 +182,7 @@ CREATE TABLE `thong_tin_khach_hang` (
 
 INSERT INTO `thong_tin_khach_hang` (`id`, `ten`, `email`, `sdt`, `sex`, `dia_chi`, `avatar`, `rank`, `diem_tich_luy`, `so_don`) VALUES
 (1, 'Huynh Trinh Thai Long', 'thailong.py2014@gmail.com', '0503154786', '', '100 đường số 3, quận Bình thạnh, phường 3', '', 1, 0, 0),
-(2, 'Chí Bảo Bảo', 'baobaochi631999@gmail.com', '0703934583', 'nam', '28 đường số 2, quận Gò Vâp, phường 3', 'ChiBaoBao.jpg', 1, 0, 0),
+(2, 'Chí Bảo Bảo', 'baobaochi631999@gmail.com', '0703934583', 'nam', '28 đường số 2, quận Gò Vâp, phường 3', 'IMG-618a23be5650e5.02531344.jpg', 1, 0, 0),
 (3, 'Phạm Nguyễn Minh Hiếu', 'hieuhieu@gmail.com', '0132654782', '', '123 Kha Vạn Cân, quận Thủ Đức, phường Linh Đông', '', 1, 0, 0),
 (4, 'Ngo Phuoc Loc', 'phuocloc@gmail.com', '0503154755', '', '100 Phan Xích Long, quận Phú Nhuận, phường 3', '', 1, 0, 0),
 (5, 'Ngo Phuoc Loc', 'phuocloc@gmail.com', '0503154755', '', '100 Phan Xích Long, quận Phú Nhuận, phường 3', '', 1, 0, 0),
@@ -218,7 +236,7 @@ ALTER TABLE `don_hang`
 -- AUTO_INCREMENT for table `mon_an`
 --
 ALTER TABLE `mon_an`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `nha_hang`

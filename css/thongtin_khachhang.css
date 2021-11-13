@@ -16,16 +16,35 @@ body{
     cursor: pointer;
     outline: none;
     color: #fff;
+    background-color: #434eee;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+  }
+
+  #chon_anh_submit {
+    margin: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
     background-color: #04AA6D;
     border: none;
     border-radius: 15px;
     box-shadow: 0 6px #999;
   }
   
+  #chon_anh_submit:active {
+    background-color: #3e8e41;
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+  }
   
   
   #chon_anh:active {
-    background-color: #3e8e41;
+    background-color: #0c229c;
     box-shadow: 0 4px #666;
     transform: translateY(4px);
   }

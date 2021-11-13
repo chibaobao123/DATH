@@ -11,13 +11,34 @@
     </div>
 </div>
 
-<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca"></div>
-<div class="tabcontent_products_nhahang" id="chay_nhahang_chay"></div>
-<div class="tabcontent_products_nhahang" id="quan1_nhahang_quan1"></div>
-<div class="tabcontent_products_nhahang" id="quan3_nhahang_quan3"></div>
-<div class="tabcontent_products_nhahang" id="quanbinhthanh_nhahang_quanbinhthanh"></div>
-<div class="tabcontent_products_nhahang" id="quanphunhuan_nhahang_quanphunhuan"></div>
-<div class="tabcontent_products_nhahang" id="quangovap_nhahang_quangovap"></div>
+<div class="tabcontent_products_nhahang" id="tatca_nhahang_tatca">
+    <div id="tatca_nhahang_tatca_body" style="height: 650px;"></div>
+    <div id="tatca_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="chay_nhahang_chay">
+    <div id="chay_nhahang_chay_body" style="height: 650px;"></div>
+    <div id="chay_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quan1_nhahang_quan1">
+    <div id="quan1_nhahang_quan1_body" style="height: 650px;"></div>
+    <div id="quan1_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quan3_nhahang_quan3">
+    <div id="quan3_nhahang_quan3_body" style="height: 650px;"></div>
+    <div id="quan3_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quanbinhthanh_nhahang_quanbinhthanh">
+    <div id="quanbinhthanh_nhahang_quanbinhthanh_body" style="height: 650px;"></div>
+    <div id="quanbinhthanh_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quanphunhuan_nhahang_quanphunhuan">
+    <div id="quanphunhuan_nhahang_quanphunhuan_body" style="height: 650px;"></div>
+    <div id="quanphunhuan_nhahang_paginations"></div>
+</div>
+<div class="tabcontent_products_nhahang" id="quangovap_nhahang_quangovap">
+    <div id="quangovap_nhahang_quangovap_body" style="height: 650px;"></div>
+    <div id="quangovap_nhahang_paginations"></div>
+</div>
 
 <script>
     $(document).ready(function(){
@@ -109,37 +130,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard(data_profile);
+                    $("#tatca_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#tatca_nhahang_tatca_body").html(html);
+                        }
+                    })
+                    
                 }
             });
-        }
-
-        
-        function addDataToCard(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-
-            // html += data.map(x => {
-            //     return  "<div class='col-2 item_card_trangchu'><div class='card'><img src='../asset/img_nhahang/" + x.img_nhahang +"' class='card-img-top' alt='https://via.placeholder.com/150'><div class='card-body'><p>" + x.ten +"</p><p><small class='card-text'>" + x.dia_chi.slice(0,20) +  "..."  + "</small></p><button type="button" class="btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3" data-toggle="modal" data-target="#form-dang-nhap-card"></div></div></div>"
-            // })
-            
-            html += "</div>";
-            // console.log(html)
-            $("#tatca_nhahang_tatca").html(html);
         }
 
         function getDataOfNhaHang_chay() {
@@ -153,33 +161,23 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_chay(data_profile);
+                    $("#chay_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#chay_nhahang_chay_body").html(html);
+                        }
+                    })
                 }
             });
-        }
-
-        
-        function addDataToCard_chay(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-            
-            html += "</div>";
-
-            $("#chay_nhahang_chay").html(html);
         }
 
         function getDataOfNhaHang_quan1() {
@@ -193,35 +191,24 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quan1(data_profile);
+                    $("#quan1_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#quan1_nhahang_quan1_body").html(html);
+                        }
+                    })
                 }
             });
         }
-
-        
-        function addDataToCard_quan1(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-            
-            html += "</div>";
-
-            $("#quan1_nhahang_quan1").html(html);
-        }
-
 
         function getDataOfNhaHang_quan3() {
             $.ajax({
@@ -234,33 +221,23 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quan3(data_profile);
+                    $("#quan3_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#quan3_nhahang_quan3_body").html(html);
+                        }
+                    })
                 }
             });
-        }
-
-        
-        function addDataToCard_quan3(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-            
-            html += "</div>";
-
-            $("#quan3_nhahang_quan3").html(html);
         }
 
         function getDataOfNhaHang_quanbinhthanh() {
@@ -274,33 +251,23 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quanbinhthanh(data_profile);
+                    $("#quanbinhthanh_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#quanbinhthanh_nhahang_quanbinhthanh_body").html(html);
+                        }
+                    })
                 }
             });
-        }
-
-        
-        function addDataToCard_quanbinhthanh(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-            
-            html += "</div>";
-
-            $("#quanbinhthanh_nhahang_quanbinhthanh").html(html);
         }
 
         function getDataOfNhaHang_quanphunhuan() {
@@ -314,33 +281,23 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quanphunhuan(data_profile);
+                    $("#quanphunhuan_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#quanphunhuan_nhahang_quanphunhuan_body").html(html);
+                        }
+                    })
                 }
             });
-        }
-
-        
-        function addDataToCard_quanphunhuan(data){
-            let html = "";
-            html += "<div class='row'>";
-
-            for (let i = 0; i < data.length; i++) {
-                    
-                    html += "<div class='col-2 item_card_trangchu'>"
-                        html += "<div class='card'>"
-                        html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
-                            html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
-                            html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
-                            html += "</div>"
-                        html += "</div>"
-                    html += "</div>"
-            }
-            
-            html += "</div>";
-
-            $("#quanphunhuan_nhahang_quanphunhuan").html(html);
         }
 
         function getDataOfNhaHang_quangovap() {
@@ -354,24 +311,51 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    addDataToCard_quangovap(data_profile);
+                    $("#quangovap_nhahang_paginations").pagination({
+                        dataSource: data_profile,
+                        pageSize: 12,
+                        ulClassName: 'd-flex justify-content-center ul_btn_paginations p-0 text-light',
+                        activeClassName: 'li_btn_paginations_active',
+                        autoHidePrevious: true,
+                        autoHideNext: true,
+                        showPrevious: true,
+                        showNext: true,
+                        callback: function(data, pagination) {
+                            // template method of yourself
+                            let html = addDataToCard(data);
+                            $("#quangovap_nhahang_quangovap_body").html(html);
+                        }
+                    })
                 }
             });
         }
 
-        
-        function addDataToCard_quangovap(data){
+        function addDataToCard(data){
             let html = "";
             html += "<div class='row'>";
 
             for (let i = 0; i < data.length; i++) {
+                    // let j = Math.floor((Math.random() * data.length));
                     
+                    // console.log(j)
+
                     html += "<div class='col-2 item_card_trangchu'>"
                         html += "<div class='card'>"
                         html += "<img src='../asset/img_nhahang/" + data[i].img_nhahang + "' class='card-img-top' alt='https://via.placeholder.com/150'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+                           
+                            if(data[i].ten.length > 12){
+                                html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            } else {
+                                html += "<p><b>" + data[i].ten + "</b></p>"
+                            }
+
+                            if(data[i].dia_chi.length > 15){
+                                html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,15) + " ... " + "</small></p>"
+                            } else {
+                                html += "<p><small class='card-text'>" + data[i].dia_chi + " ... " + "</small></p>"
+                            }
+                            
                             html += "<button type='button' class='btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3' data-toggle='modal' data-target='#form-dang-nhap-card'>Xem chi tiết</button>"
                             html += "</div>"
                         html += "</div>"
@@ -379,8 +363,9 @@
             }
             
             html += "</div>";
-
-            $("#quangovap_nhahang_quangovap").html(html);
+            return html;
+            
         }
+
     });
 </script>

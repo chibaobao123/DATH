@@ -12,22 +12,37 @@
 </div>
 
 <div class="tabcontent_products_monan" id="tatca_monan_tatca">
-    <div id="tatca_monan_tatca_body"></div>
+    <div id="tatca_monan_tatca_body" style='height:1100px'></div>
     <div id="tatca_monan_paginations"></div>
 </div>
 
-<div class="tabcontent_products_monan" id="doan_monan_doan"></div>
-<div class="tabcontent_products_monan" id="douong_monan_douong"></div>
-<div class="tabcontent_products_monan" id="chay_monan_chay"></div>
-<div class="tabcontent_products_monan" id="banhkem_monan_banhkem"></div>
-<div class="tabcontent_products_monan" id="trangmieng_monan_trangmieng"></div>
+<div class="tabcontent_products_monan" id="doan_monan_doan">
+    <div id="doan_monan_doan_body" style='height:1100px'></div>
+    <div id="doan_monan_paginations"></div>
+</div>
+<div class="tabcontent_products_monan" id="douong_monan_douong">
+    <div id="douong_monan_douong_body" style='height:1100px'></div>
+    <div id="douong_monan_paginations"></div>
+</div>
+<div class="tabcontent_products_monan" id="chay_monan_chay">
+    <div id="chay_monan_chay_body" style='height:1100px'></div>
+    <div id="chay_monan_paginations"></div>
+</div>
+<div class="tabcontent_products_monan" id="banhkem_monan_banhkem">
+    <div id="banhkem_monan_banhkem_body" style='height:1100px'></div>
+    <div id="banhkem_monan_paginations"></div>
+</div>
+<div class="tabcontent_products_monan" id="trangmieng_monan_trangmieng">
+    <div id="trangmieng_monan_trangmieng_body" style='height:1100px'></div>
+    <div id="trangmieng_monan_paginations"></div>
+</div>
 
 <script>
     $(document).ready(function(){
 
         getDataOfMonAn();
 
-        var i, tabcontent, tablinks;
+        let i, tabcontent, tablinks;
 
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent_products_monan");
@@ -40,7 +55,7 @@
 
         function show_products_monan(btn, item) {
             // Declare all variables
-            var i, tabcontent_products_monan, tablinks;
+            let i, tabcontent_products_monan, tablinks;
 
             // Get all elements with class="tabcontent_products_monan" and hide them
             tabcontent_products_monan = document.getElementsByClassName("tabcontent_products_monan");
@@ -101,7 +116,7 @@
                 success: function(data) {
                     // console.log(data);
                     let data_profile = $.parseJSON(data);
-                    console.log(data_profile);   
+                    // console.log(data_profile);   
                     $("#tatca_monan_paginations").pagination({
                         dataSource: data_profile,
                         pageSize: 18,
@@ -113,10 +128,21 @@
                         showNext: true,
                         callback: function(data, pagination) {
                             // template method of yourself
-                             var html = addDataMonAnToCard(data);
+                             let html = addDataMonAnToCard(data);
                             // console.log(html);
 
                             $("#tatca_monan_tatca_body").html(html);
+
+                            for(let i = 0; i < data.length; i++){
+
+                                let btn_add_shopping_cart = 'btn-add-product-to-shopping-cart-' + i;
+                                let ten_products_user_page = 'ten_products_user_page_' + i;
+
+                                $(`.${btn_add_shopping_cart}`).click(function(){
+                                    let ten = $(`.${ten_products_user_page}`).attr("ten");
+                                    console.log(ten)
+                                })
+                            }
                         }
                     })
                     // addDataToCard(data_profile);
@@ -133,18 +159,26 @@
                     
                     html += "<div class='col-2 item_card_trangchu'>"
                         html += "<div class='card'>"
-                        html += "<img src='../asset/img_products/" + data[i].img_monan + "' class='card-img-top' alt='" + data[i].img_monan + "'>"
+                        html += "<img src='../asset/img_products/" + data[i].img_monan + "' class='card-img-top img_product_monan_user_page_" + i + "' alt='" + data[i].img_monan + "'>"
                             html += "<div class='card-body'>"
-                            html += "<p><b>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
-                            html += "<p><small class='card-text'>" + data[i].dia_chi.slice(0,20) + " ... " + "</small></p>"
+
+                            if(data[i].ten.length > 11){
+                                html += "<p><b class='ten_products_user_page_" + i +"' ma_monan='" + data[i].ma_monan + "' gia_tien='" + data[i].gia_tien + "' ten='" + data[i].ten + "'>" + data[i].ten.slice(0,12) + "..." + "</b></p>"
+                            } else {
+                                html += "<p><b class='ten_products_user_page_" + i +"' ma_monan='" + data[i].ma_monan + "' gia_tien='" + data[i].gia_tien + "' ten='" + data[i].ten + "'>" + data[i].ten + "</b></p>"
+                            }
+
+                            html += "<p><span>" + parseInt(data[i].gia_tien).toLocaleString() + "</span>đ</p>"
                             html += "<div class='d-flex mt-3'>"
-                            html += "<a type='button' class='w-25 p-1 btn btn-primary mr-1' class='badge text-light'><i class='fas fa-cart-plus'></i></a>";
+                            html += "<button type='button' class='w-25 p-1 btn btn-primary mr-1 btn-add-product-to-shopping-cart-" + i + " badge text-light'><i class='fas fa-cart-plus'></i></button>";
                             html += "<a type='button' class='w-75 text-white btn btn-primary' class='badge text-light' style='font-size:0.7rem' href='../san_pham/index.php?id=" + data[i].id + "&ma_monan=" + data[i].ma_monan + "&ma_nhahang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
                             html += "</div>"
                             html += "</div>"
                         html += "</div>"
                     html += "</div>"
             }
+
+           
 
             // html += data.map(x => {
             //     return  "<div class='col-2 item_card_trangchu'><div class='card'><img src='../asset/img_nhahang/" + x.img_nhahang +"' class='card-img-top' alt='" + data[i].img_nhahang + "'><div class='card-body'><p>" + x.ten +"</p><p><small class='card-text'>" + x.dia_chi.slice(0,20) +  "..."  + "</small></p><button type="button" class="btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3" data-toggle="modal" data-target="#form-dang-nhap-card"></div></div></div>"

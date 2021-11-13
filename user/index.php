@@ -4,7 +4,7 @@
     <?php
       include("../sessions/session_page.php");
     ?>
-    <title><?php echo $_SESSION['login_user'] ?></title>
+    <title>Trang chủ</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,7 +70,11 @@
           <?php
             include("../views/user/products_monan.php");
           ?>
+          <?php
+            include("../views/user/shopping_cart.php");
+          ?>
         </section>
+        
       </section>
     </section>
 

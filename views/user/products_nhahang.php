@@ -171,15 +171,10 @@
                         html += "</div>"
                     html += "</div>"
             }
-
-            // html += data.map(x => {
-            //     return  "<div class='col-2 item_card_trangchu'><div class='card'><img src='../asset/img_nhahang/" + x.img_nhahang +"' class='card-img-top' alt='" + data[i].img_nhahang + "'><div class='card-body'><p>" + x.ten +"</p><p><small class='card-text'>" + x.dia_chi.slice(0,20) +  "..."  + "</small></p><button type="button" class="btn-dang-nhap-card btn-dangnhap-dangky-navbar-card w-100 btn btn-primary mt-3" data-toggle="modal" data-target="#form-dang-nhap-card"></div></div></div>"
-            // })
             
             html += "</div>";
             return html;
-            // console.log(html)
-            // $("#tatca_nhahang_tatca").html(html);
+
         }
 
         function getDataOfNhaHang_chay() {

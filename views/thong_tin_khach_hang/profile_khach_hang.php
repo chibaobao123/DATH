@@ -15,9 +15,11 @@
                 <div id="old_img_avatar" class='d-flex justify-content-center'>
 
                 </div>
-                <form action="upload.php"
+                <form 
+                    action="../api/thongtin_khachhang/upload.php"
                     id="form_upload_anh" 
                     method="post"
+                    class='d-flex justify-content-center'
                     enctype="multipart/form-data">
 
                     <input type="file"
@@ -25,10 +27,9 @@
                         id="chossen_file_img">
 
                     <input type="submit" 
-                        class="d-none"
-                        id="submit" 
+                        id="chon_anh_submit" 
                         value="Cập nhật ảnh">
-                </form>
+                <!-- </form> -->
             </div>
             <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -149,13 +150,14 @@
                 // console.log(b);
 
                 const file = this.files[0];
-                console.log(file);
+                // console.log(file.name);
 
                 if (file) {
                     const reader = new FileReader();
+                    // console.log(reader);
 
                     reader.addEventListener("load", function() {
-                        console.log(this.result);
+                        // console.log(this.result);
                         previewImage.attr("src", this.result);
                     });
 
@@ -165,6 +167,64 @@
             })
         })
 
-        
+        $('#chon_anh_submit').click(function(e){
+            e.preventDefault();
+
+            let form_data = new FormData();
+      	    let img = $("#chossen_file_img")[0].files;
+            // console.log(form_data,img);
+
+            if(img.length == 1){
+                form_data.append('my_image', img[0]);
+                // console.log(img[0]) 
+                // console.log(form_data);
+
+                $.ajax({
+                    url: '../api/thongtin_khachhang/upload.php',
+                    type: 'POST',
+                    cache: false,
+                    data: form_data,
+                    contentType: false,
+                    processData: false,
+                    success: function(res){
+                        // console.log(res);
+
+                        let data = JSON.parse(res);
+
+                        let path_old_img = $('.img-avatar-profile').attr('src');
+
+                        let ten = $('.ten-khach-hang-navbar-hide').text();
+
+                        $.ajax({
+                                url: '../api/thongtin_khachhang/upload.php',
+                                type: 'POST',
+                                cache: false,
+                                data: {
+                                    action: 'upload_name_img',
+                                    data: data,
+                                    ten : ten,
+                                    path : path_old_img,
+                                },
+                                success: function(res){
+                                    if(res == 'success'){
+                                        tailaitrang();
+                                    } else {
+                                        thongbaoloi('Cập nhật thất bại!!!')
+                                    }
+                                }
+
+                        });
+                    }
+
+                });
+
+                
+            
+            } else if (img.length > 1){
+                thongbaoloi("Vui lòng chỉ một hình ảnh.");
+            } else {
+                thongbaoloi("Vui lòng chọn một hình ảnh.");
+            }
+        })
     })
 </script>
