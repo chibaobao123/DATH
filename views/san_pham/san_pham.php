@@ -1,4 +1,4 @@
-<div class='container text-white mt-2 py-5 px-0 profile_sanpham' id='profile_sanpham'></div>
+<div class='container text-white mt-5 py-5 px-0 profile_sanpham' id='profile_sanpham'></div>
 <div class='container text-white mt-2 py-3 px-0 profile_nhahang_sanpham' id='profile_nhahang_sanpham'></div>
 <div class='container text-center text-white mt-2 py-3'>
     <h2>-- Một số món khác --</h2>
@@ -6,6 +6,26 @@
 <div class='container mt-2 py-3 cungNhaHang_sanpham'>
     <div id="cungNhaHang_sanpham"></div>
     <div id="cungNhaHang_sanpham_paginations"></div>
+</div>
+
+<div class="modal fade" id="order_products" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -125,7 +145,7 @@
                     }
 
                     html += "</p>"
-                    html += "<button type='button' class='btn btn-primary mt-3 w-100'><i class='fas fa-shopping-cart'></i></button>"
+                    html += "<button type='button' class='btn btn-primary mt-3 w-100' data-toggle='modal' data-target='#order_products'><i class='fas fa-shopping-cart'></i></button>"
                     html += "</div>"
                     html += "</div>"
                     html += "</div>"

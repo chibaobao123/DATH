@@ -47,7 +47,7 @@
     <!-- pagination_js -->
     <script src="../library/pagination_js/pagination.js"></script>
 
-    <section class="header_trangchu">
+    <section id="header">
       <?php
         include("../views/layouts/trang_chu/header.php");
       ?>

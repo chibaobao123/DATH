@@ -23,6 +23,8 @@
             if ($rss['rank'] == 1){
                 $_SESSION['rank'] = $rss['rank'];
                 $_SESSION['login_user'] = $rss['ten'];
+                $_SESSION['sdt'] = $rss['sdt'];
+                $_SESSION['dia_chi'] = $rss_thongtin['dia_chi'];
                 $_SESSION['username'] = $rss['username'];
                 $_SESSION['avatar_icon'] = $rss_thongtin['avatar'];
                 echo $_SESSION['rank'];

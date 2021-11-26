@@ -47,13 +47,13 @@
     <!-- pagination_js -->
     <script src="../library/pagination_js/pagination.js"></script>
 
-    <section class="header_user">
+    <section id="header">
       <?php
         include('../views/layouts/header.php');
       ?>
     </section>
     <section class='body_page_begin'>
-      <section class="profile_khachhang_layout">
+      <section class="profile_khachhang_layout mt-5 pt-3">
         <?php
           include("../views/thong_tin_khach_hang/profile_khach_hang.php");
         ?>
@@ -80,7 +80,7 @@
     </section>
 
     <section class="body_trang_user container body_page_search d-none">
-        <div class='close_search_body d-flex justify-content-end py-4'>
+        <div class='close_search_body d-flex justify-content-end py-5 mt-5'>
           <button type='button' class='btn btn-primary close_search_body_button'><i class='fas fa-times' style='font-size: 20px;'></i></button>
         </div>
         <div class="body_page_search_data">

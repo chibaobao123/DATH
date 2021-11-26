@@ -145,6 +145,10 @@ body{
     border-bottom:1px solid white;
 }
 
+.table_sanpham .title_sanpham_order_cursor{
+    cursor: pointer;
+}
+
 .table_sanpham .title_sanpham_order .img_sanpham img{
     border-radius:10px;
 }

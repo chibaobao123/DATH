@@ -1,4 +1,4 @@
-<div class='container text-white my-4 py-5 px-0 profile_khachhang rounded rounded-pill' id='profile_khachhang'></div>
+<div class='container text-white my-5 py-5 px-0 profile_khachhang rounded rounded-pill' id='profile_khachhang'></div>
 
 <div class="modal fade" id="form_chinhsua_img" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body ">
                 <div id="btn-chon-anh" class='d-flex justify-content-center'>
-                    <button id='chon_anh' class=''>Chọn ảnh từ thư viện</button>
+                    <button id='chon_anh' class='ml-4'>Chọn ảnh từ thư viện</button>
                 </div>
                 <div id="old_img_avatar" class='d-flex justify-content-center'>
 
@@ -29,7 +29,7 @@
                     <input type="submit" 
                         id="chon_anh_submit" 
                         value="Cập nhật ảnh">
-                <!-- </form> -->
+                </form>
             </div>
             <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

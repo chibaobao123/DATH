@@ -21,6 +21,13 @@
 
 
 /*  header.php */
+#header .header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
 .ten-khach-hang-navbar:focus, .ten-khach-hang-navbar:focus-visible{
 	outline: none;
 	box-shadow: none;
@@ -151,6 +158,11 @@ select{
     height: 2.4rem;
     border: 1px solid #d4d9df;
     border-radius: 0.6rem;
+}
+
+/* carosuel */
+.carousel_body{
+    z-index: -1;
 }
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 08:50 AM
+-- Generation Time: Nov 26, 2021 at 07:13 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -32,21 +32,22 @@ CREATE TABLE `don_hang` (
   `ma_monan` char(225) NOT NULL,
   `ten_monan` varchar(225) NOT NULL,
   `ma_nhahang` char(225) NOT NULL,
-  `ten_nhahang` varchar(255) NOT NULL,
-  `dia_chi` varchar(225) NOT NULL,
   `so_luong` int(100) NOT NULL,
   `img_monan` char(225) NOT NULL,
   `username` char(225) NOT NULL,
   `ngay_dat` char(225) NOT NULL,
-  `gia_tien` int(225) NOT NULL
+  `gia_tien` int(225) NOT NULL,
+  `tinh_trang` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `don_hang`
 --
 
-INSERT INTO `don_hang` (`id`, `ma_monan`, `ten_monan`, `ma_nhahang`, `ten_nhahang`, `dia_chi`, `so_luong`, `img_monan`, `username`, `ngay_dat`, `gia_tien`) VALUES
-(1, 'bundaumamtom', 'Bún đậu mắm tôm', 'NangMo', 'Nàng Mơ', '852 Quang Trung, Phường 8, Gò Vấp', 1, 'BunDauNangMo.jpg', 'baobaochi', 'Tue Oct 26 2021 14:35:59', 55000);
+INSERT INTO `don_hang` (`id`, `ma_monan`, `ten_monan`, `ma_nhahang`, `so_luong`, `img_monan`, `username`, `ngay_dat`, `gia_tien`, `tinh_trang`) VALUES
+(2, 'mocha', 'Mocha', 'nhapham', 2, 'mocha.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 80000, 0),
+(3, 'capucchino', 'Capucchino', 'nhapham', 3, 'capucchino.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 120000, 0),
+(4, 'suaGaoSuongSam', 'Sữa gạo sương sâm', 'nhapham', 3, 'suaGaoSuongSam.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 120000, 0);
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ ALTER TABLE `thong_tin_khach_hang`
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mon_an`
