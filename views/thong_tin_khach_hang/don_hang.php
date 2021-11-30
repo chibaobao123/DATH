@@ -1,6 +1,6 @@
 <div class='thongtin_chitiet_donhang container' style='display:none'>
     <div class='select-button-donhang '>
-        <button class='ml-0'id='btn_quaylai'style='font-size:1.5rem;'><i class='fas fa-arrow-left pl-3 pr-3'></i>Quay lại</button>
+        <button class='ml-0'id='btn_quaylai' style='font-size:1.5rem;'><i class='fas fa-arrow-left pl-3 pr-3'></i>Quay lại</button>
     </div>
 
     <div id='' class='mt-1'>
@@ -67,6 +67,9 @@
 
 <script type='text/javascript'>
     $(document).ready(function() {
-        
+        $('#btn_quaylai').on('click', function(){
+            $('.thongtin_chitiet_donhang').toggle();
+            $('.tongthe_sanpham_donhang').toggle();
+        })
     })
 </script>

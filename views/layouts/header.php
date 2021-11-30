@@ -315,9 +315,15 @@
 
       }
 
-      console.log(array)
-      
-      $.ajax({
+      // console.log(array)
+
+      if(array.length == 0) {
+
+        thongbaoloi('Chưa có sản phẩm nào trong giỏ hàng !!!');
+
+      } else if(array.length > 0) {
+
+        $.ajax({
             url: "../api/taoDonHang/taoDonHang.php",
             type: "POST",
             cache: false,
@@ -327,12 +333,16 @@
             },
             success: function(msg) {
               console.log(msg)
+              if(msg == "success"){
+                location.href = '../thong_tin_khach_hang/thongtin_user.php?username=' + username;
+                addToCart('empty','')
+              }else{
+                thongbaoloi(msg)
+              }
               
             }
           })
-
-
-
+      }
     })
   })
 </script>
