@@ -40,6 +40,23 @@
 		echo json_encode($json_response);
     }
 
+    if (isset($_POST['action']) && $_POST['action'] == 'daNhanHang') {
+        $ma_monan = $_POST['ma_monan'];
+        $ma_nhahang = $_POST['ma_nhahang'];
+        $ma_tinhtrang = $_POST['ma_tinhtrang'];
+        $ten = $_POST['ten'];
 
+        $sql = "UPDATE don_hang SET tinh_trang = '$ma_tinhtrang' WHERE ma_monan = '$ma_monan' AND ma_nhahang = '$ma_nhahang' AND username = '$ten'";    
+
+        $rs = mysqli_query($db, $sql);
+
+        if($rs) {
+            echo "success";
+        } else {
+            echo "error";
+        }
+    }
     die;
 ?>
+
+

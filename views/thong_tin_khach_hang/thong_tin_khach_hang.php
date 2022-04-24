@@ -109,33 +109,81 @@
                     // console.log(data); 
 
                     let data_profile = $.parseJSON(data);
+                    // console.log(data_profile)
 
-                    addDataOfProductsSelect(data_profile);
+                    let tat_ca = addDataOfProductsSelect(data_profile);
+                    let cho_xac_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '1'))
+                    let cho_lay_hang = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '2'))
+                    let dang_giao = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '3'))
+                    let da_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '4'))
+                    let da_huy = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '5'))
 
-                    for (i = 0; i < data_profile.length; i++){
+                    $("#table_tatca").html(tat_ca);
+                    $("#table_choxacnhan").html(cho_xac_nhan);
+                    $("#table_cholayhang").html(cho_lay_hang);
+                    $("#table_danggiao").html(dang_giao);
+                    $("#table_danhan").html(da_nhan);
+                    $("#table_dahuy").html(da_huy);
 
-                        let show_profile = 'click_show_profile_' + i;
-                        let show_sp_ten = 'show_sp_ten_' + i;
-
-                        $(`.${show_profile}`).on('click', function() {
-
-                            $('.thongtin_chitiet_donhang').toggle();
-                            $('.tongthe_sanpham_donhang').toggle();
-
-                            let c = $('.ten-khach-hang-navbar-hide').text();
-
-                            let a = $(`.${show_sp_ten}`).attr('ma_monan');
-                            let b = $(`.${show_sp_ten}`).attr('ma_nhahang');
-
-                            chiTietSanPhamOrder(a, b, c);
-                        })
-                    }
+                    
                 }
             });
         }
 
-        function chiTietSanPhamOrder(ma_monan, ma_nhahang, ten){
+
+        
+
+        
+        function addDataOfProductsSelect(data){
+            // console.log(data)    
+            let html = "";
+
+            for (let i = 0; i < data.length; i++) {
+                    
+                html += "<div class='container table_sanpham text-light my-2'>"
+                html += "<div class='row title_sanpham_order title_sanpham_order_cursor py-5' onclick=chiTietSanPhamOrder('" + data[i].ma_monan + "','" + data[i].ma_nhahang + "')>"
+
+                if(data[i].img_monan == ''){
+                    html += "<div class='col-3 img_sanpham text-right'><img src='https://via.placeholder.com/150'/></div>"
+                } else {
+                    html += "<div class='col-3 img_sanpham text-right'><img src='../asset/img_products/" + data[i].img_monan + "'/></div>"
+                }
+
+                html += "<div class='col-7 '>"
+                html += "<p class='tittle_sanpham' >" + data[i].ten_monan + "</p>"
+                html += "<p>Tên nhà hàng: <strong class='show_sp_nhahang_" + i + "'>" + data[i].ten + "</strong></p>"
+                html += "<p class='soluong_sanpham'>Số lượng : <span class='show_sp_soluong_" + i + "'>" + data[i].so_luong + "</span></p>"
+                html += "</div>"
+                html += "<div class='col-2 gia_sanpham align-self-center'>"
+                html += "<p class='show_sp_giatien_" + i + "' style='display:none'>" + parseInt(data[i].gia_tien) + " </p>"
+                html += "</div>"
+                html += "</div>"
+                html += "<div class='tongtien_sanpham d-flex justify-content-end py-2 my-2'>"
+                html += "<div class='tong_tien pr-5'>Tổng tiền: <span class='tong_tien pr-5' tong_tien='" + parseInt(data[i].gia_tien) + "'>" + parseInt(data[i].gia_tien).toLocaleString('vi-VN') + "</span></div>"
+                html += "</div>"
+                html += "<div class='btn_lienhe_nhanhang pb-4 d-flex justify-content-end'>"
+                html += "<button class='danhanhang' onclick=daNhanHang('"+ data[i].ma_monan +"','" + data[i].ma_nhahang + "')>Đã nhận hàng</button>"
+                html += "<button class='lienhenguoiban'>Liên hệ người bán</button>"
+                html += "</div>"
+                html += "</div>"
+
+                
+
+            }
+
+            // $("#table_tatca").html(html);
+            return html;
+        }
+
+
+    });
+
+    function chiTietSanPhamOrder(ma_monan, ma_nhahang){
             // console.log(ma_monan, ma_nhahang, ten);
+            $('.thongtin_chitiet_donhang').toggle();
+            $('.tongthe_sanpham_donhang').toggle();
+
+            let ten = $('.ten-khach-hang-navbar-hide').text();
 
             $.ajax({
                 url: '../api/don_hang/don_hang.php',
@@ -200,48 +248,35 @@
             })
 
             
-        }
+    }
 
-        
-        function addDataOfProductsSelect(data){
-            let html = "";
+    function daNhanHang(ma_monan,ma_nhahang) {
+        let ten = $('.username-khach-hang-navbar-hide').text();
+        let ma_tinhtrang = 4;
+        // console.log(ma_monan, ma_nhahang, ten, ma_tinhtrang);
 
-            for (let i = 0; i < data.length; i++) {
-                    
-                html += "<div class='container table_sanpham text-light my-2'>"
-                html += "<div class='row title_sanpham_order title_sanpham_order_cursor py-5 click_show_profile_" + i + "'>"
 
-                if(data[i].img_monan == ''){
-                    html += "<div class='col-3 img_sanpham text-right'><img src='https://via.placeholder.com/150'/></div>"
-                } else {
-                    html += "<div class='col-3 img_sanpham text-right'><img src='../asset/img_products/" + data[i].img_monan + "'/></div>"
+        $.ajax({
+                url: '../api/don_hang/don_hang.php',
+                type: 'POST',
+                cache: false,
+                data: {
+                    action : 'daNhanHang',
+                    ma_monan: ma_monan,
+                    ma_nhahang: ma_nhahang,
+                    ma_tinhtrang : ma_tinhtrang,
+                    ten: ten,
+                },
+                success: function(msg) {    
+                    console.log(msg);
+                    if(msg == "success"){
+                        alert('Xác nhận thành công');
+                        getDataOfProductsSelect();
+                    }else{
+                        alert('Lỗi hệ thống')
+                    }
                 }
+            })
 
-                html += "<div class='col-7 '>"
-                html += "<p class='tittle_sanpham show_sp_ten_" + i + "' ma_monan='" + data[i].ma_monan + "' ma_nhahang='" + data[i].ma_nhahang + "'>" + data[i].ten_monan + "</p>"
-                html += "<p>Tên nhà hàng: <strong class='show_sp_nhahang_" + i + "'>" + data[i].ten + "</strong></p>"
-                html += "<p class='soluong_sanpham'>Số lượng : <span class='show_sp_soluong_" + i + "'>" + data[i].so_luong + "</span></p>"
-                html += "</div>"
-                html += "<div class='col-2 gia_sanpham align-self-center'>"
-                html += "<p class='show_sp_giatien_" + i + "' style='display:none'>" + parseInt(data[i].gia_tien) + " </p>"
-                html += "</div>"
-                html += "</div>"
-                html += "<div class='tongtien_sanpham d-flex justify-content-end py-2 my-2'>"
-                html += "<div class='tong_tien pr-5'>Tổng tiền: <span class='tong_tien pr-5' tong_tien='" + parseInt(data[i].gia_tien) + "'>" + parseInt(data[i].gia_tien).toLocaleString('vi-VN') + "</span></div>"
-                html += "</div>"
-                html += "<div class='btn_lienhe_nhanhang pb-4 d-flex justify-content-end'>"
-                html += "<button class='danhanhang'>Đã nhận hàng</button>"
-                html += "<button class='lienhenguoiban'>Liên hệ người bán</button>"
-                html += "</div>"
-                html += "</div>"
-
-                
-
-            }
-
-            $("#table_tatca").html(html);
-        }
-
-
-    });
+    }
 </script>

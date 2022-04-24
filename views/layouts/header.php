@@ -33,8 +33,9 @@
         <a class="img-khach-hang-navbar" href="../thong_tin_khach_hang/thongtin_user.php?username=<?php echo $_SESSION['username'] ?>">
           <img id="img-khach-hang-navbar" src="../asset/img_user/<?php echo $_SESSION['avatar_icon'] ?>" height="30" width="30" alt="avatar"/>
         </a>
-        <button type="button" class="btn text-light" data-toggle="modal" data-target="#shopping-cart-body">
+        <button type="button" class="btn text-light" data-toggle="modal" data-target="#shopping-cart-body" style="position:relative;">
           <i class="fas fa-shopping-cart"></i>
+          <span id="tong_so_luong" style="position:absolute;top:-10px"></span>
         </button>
     </div>
 </nav> 
@@ -115,10 +116,14 @@
                     data: queryString,
                     type: "POST",
                     success:function(data){
-                        
-                        // console.log(data_sp)
+                      if(action == "add"){
+                            alert("Đã thêm vào giỏ hàng của bạn")
+                        }
+
+                        // console.log(data)
                         let html = "";
                         let tong_tien = 0;
+                        let tong_so_luong = 0;
 
 
                         // console.log(data);
@@ -141,9 +146,10 @@
 
                             for (let item in data_sp) {
                                 // console.log(data_sp[item])
+                                tong_so_luong += data_sp[item].so_luong;
                                 html += "<tr class='text-center'>"
                                 html += "<td><img height='50px' width='50px' src='../asset/img_products/" + data_sp[item].img_monan + "' img_monan='" + data_sp[item].img_monan + "'  class='img_monan_order'/></td>"
-                                html += "<td><strong><span class='ten_sanpham_order' ma_monan='" + data_sp[item].ma_monan + "' ma_nhahang='" + data_sp[item].ma_nhahang + "' dia_chi='" + data_sp[item].dia_chi + "'>" + data_sp[item].ten + "</span></strong></td>"
+                                html += "<td><strong><a class='ten_sanpham_order' ma_monan='" + data_sp[item].ma_monan + "' ma_nhahang='" + data_sp[item].ma_nhahang + "' dia_chi='" + data_sp[item].dia_chi + "' href='../san_pham/index.php?id=" + data_sp[item].id + "&ma_monan=" + data_sp[item].ma_monan + "&ma_nhahang=" + data_sp[item].ma_nhahang + "'>" + data_sp[item].ten + "</a></strong></td>"
                                 html += "<td><input class='so_luong_order' type='number' name='so_luong' value = '" + data_sp[item].so_luong +"' style='width:50px'/></td>"
                                 html += "<td class='text-right gia_sanpham_order' gia='"+ (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)) + "'>" + (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)).toLocaleString('vi-VN') + "</td>"
                                 html += "<td class='text-center'><button onClick = 'addToCart('remove','" + data_sp[item].ma_monan + "')' class='btnRemoveAction cart-action btn text-danger'><i class='fas fa-times-circle'></i></button></td>"
@@ -160,6 +166,12 @@
                         }
 
                         $("#cart-item").html(html);
+                        // console.log(tong_so_luong)
+
+                        let tong_so_san_pham_gio_hang = "<span class='text-danger' style='font-size:16px'>(<span class='px-1'>" + tong_so_luong + "</span>)</span>"
+                        $("#tong_so_luong").html(tong_so_san_pham_gio_hang);
+
+                        
                     },
                     error:function (){
                         thongbaoloi('error')
@@ -283,6 +295,7 @@
       let src_img_mon = document.getElementsByClassName('img_monan_order');
       let username = $('.username-khach-hang-navbar-hide').text();
       let date = new Date();
+      date = date.getDate() + "/" + ( Number(date.getMonth()) + 1 ) + "/" + date.getFullYear();
 
       let array = [];
 
@@ -308,7 +321,7 @@
               'img_monan': src_img,
               'username': username,
               'ngay_dat': date,
-              'tinh_trang': 0,
+              'tinh_trang': 1,
             };
 
           array.push(arr);

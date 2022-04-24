@@ -21,9 +21,9 @@
         </form>
 
         <form id='form_quen_mat_khau' class='form_quen_mat_khau d-none'>
-          <div class="form-group">
-            <label class="border-bottom border-dark"  for="tai_khoan_quen_mat_khau">Tài khoản hoặc Email:</label>
-            <input type="text" class="form-control" id="tai_khoan_quen_mat_khau">
+          <div class="form-group" id="cap_lai_mat_khau">
+            <label class="border-bottom border-dark"  for="tai_khoan_quen_mat_khau">Email:</label>
+            <input type="text" class="form-control" id="tai_khoan_quen_mat_khau" placeholder="abc@gmail.com">
           </div>
         </form>
 
@@ -97,6 +97,35 @@
 
   })
 
+  $('#btn-cap-lai-mat-khau-form').on('click', function(){
+    
+    let inp = $("#tai_khoan_quen_mat_khau").val();
+    // console.log(inp)
+    if(kiemtraemail(inp)){
+      $.ajax({
+        url: "../api/trang_chu/dang_nhap.php",
+        type: "POST",
+        cache: false,
+        data: {
+          action: "layLaiMatKhau",
+          inp : inp,
+			},
+			success: function(msg) {
+				// console.log(msg)
+        document.getElementById("btn-cap-lai-mat-khau-form").disabled = true;
+        if(msg == '1'){
+          $('#cap_lai_mat_khau').html('<p class="text-center text-success" style="font-size:22px">Mật khẩu mới đã được gửi cho email của bạn</p>');
+          
+        }else {
+          $('#cap_lai_mat_khau').html('<p class="text-center text-danger" style="font-size:22px">Lỗi hệ thống</p>')
+        }
+				
+			}
+      })
+    }
+    
+    })
 
-})	
+  })
+	
 </script>

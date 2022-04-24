@@ -29,8 +29,6 @@
                                                     )
                                                 );
                     
-                    $haha=0;
-                    
                     if(!empty($_SESSION["cart_item"])) {
 
                         if(in_array($ma_monan,array_keys($_SESSION["cart_item"]))) {

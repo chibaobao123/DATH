@@ -8,25 +8,6 @@
     <div id="cungNhaHang_sanpham_paginations"></div>
 </div>
 
-<div class="modal fade" id="order_products" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
     $(document).ready(function() {
@@ -58,6 +39,7 @@
                     let danh_gia = data[0].danh_gia;
                     let dia_chi = data[0].dia_chi;
                     let tinh_trang = data[0].tinh_trang;
+                    let ma_monan = data[0].ma_monan;
                     // console.log(ten, gia, danh_gia, dia_chi,tinh_trang)
 
                     let html = "";
@@ -145,7 +127,7 @@
                     }
 
                     html += "</p>"
-                    html += "<button type='button' class='btn btn-primary mt-3 w-100' data-toggle='modal' data-target='#order_products'><i class='fas fa-shopping-cart'></i></button>"
+                    html += "<button type='button' class='btn btn-primary mt-3 w-100' onClick = addToCart('add','" + ma_monan + "')><i class='fas fa-shopping-cart'></i></button>"
                     html += "</div>"
                     html += "</div>"
                     html += "</div>"
@@ -254,8 +236,8 @@
 
                 html += "<p><small class='card-text'>" + (data[i].dia_chi).slice(0,12) + "..." + "</small></p>"
                 html += "<div class='d-flex mt-3'>"
-                html += "<a type='button' class='w-25 p-1 btn btn-primary mr-1'><i class='fas fa-cart-plus'></i></a>"
-                html += "<a type='button' class='w-75 text-white btn btn-primary' style='font-size:0.7rem'>Xem chi tiết</a>"
+                html += "<a type='button' class='w-25 p-1 btn btn-primary mr-1' onClick = addToCart('add','" + data[i].ma_monan + "')><i class='fas fa-cart-plus'></i></a>"
+                html += "<a type='button' class='w-75 text-white btn btn-primary' style='font-size:0.7rem' href='../san_pham/index.php?id=" + data[i].id + "&ma_monan=" + data[i].ma_monan + "&ma_nhahang=" + data[i].ma_nhahang + "'>Xem chi tiết</a>"
                 html += "</div>"
                 html += "</div>"
                 html += "</div>"

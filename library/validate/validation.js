@@ -109,5 +109,5 @@ function kiemtradiachi(dia_chi){
 }
 
 function tailaitrang() {
-	setTimeout(function () { location.reload(); }, 1500);
+	location.reload();
   }
