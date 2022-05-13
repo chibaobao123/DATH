@@ -96,8 +96,5 @@
 
   </body>
 
-  <script>
-      // tailaitrang()
-
-  </script>
+  <script src="../library/thongTinDonHangUser/script.js"></script>
 </html>

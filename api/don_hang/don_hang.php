@@ -21,13 +21,14 @@
     }
 
     if (isset($_GET['action']) && $_GET['action'] == 'chiTietSanPham') {
-        $ma_monan = $_GET['ma_monan'];
+        $date = $_GET['date'];
         $ten = $_GET['ten'];
-        $ma_nhahang = $_GET['ma_nhahang'];
+        $ma_nhahang = $_GET['nhahang'];
+        $username = $_GET['user'];
 
         $sql = "SELECT *
                 FROM don_hang 
-                INNER JOIN thong_tin_khach_hang ON don_hang.ma_monan = '$ma_monan' AND don_hang.ma_nhahang = '$ma_nhahang' AND  thong_tin_khach_hang.ten = '$ten'";
+                INNER JOIN thong_tin_khach_hang ON don_hang.ngay_dat = '$date' AND don_hang.ma_nhahang = '$ma_nhahang' AND don_hang.username = '$username' AND  thong_tin_khach_hang.ten = '$ten'";
                 
         $rs = mysqli_query($db, $sql);
         $json_response = array();

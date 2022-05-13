@@ -31,10 +31,6 @@
                         value="Cập nhật ảnh">
                 </form>
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
         </div>
     </div>
 </div>
@@ -114,11 +110,11 @@
                         html += "<div class='sodon_profile py-2'>";
 
                         if(data[i].diem_tich_luy >= 0 && data[i].diem_tich_luy < 1000){
-                            html += "<b>Thành viên : </b> <span class='sodon text-warning'>Vàng <i class='fas fa-crown'></i></span><br/>";
+                            html += "<b>Thành viên : </b> <span class='sodon text-secondary'>Sắt <i class='fas fa-crown'></i></span><br/>";
                         } else if(data[i].diem_tich_luy > 1000 && data[i].diem_tich_luy < 2000){
-                            html += "<b>Thành viên : </b> <span class='sodon text-warning'>Vàng <i class='fas fa-crown'></i></span><br/>";
+                            html += "<b>Thành viên : </b> <span class='sodon' style='color: #f1cba1'>Đồng <i class='fas fa-crown'></i></span><br/>";
                         } else if(data[i].diem_tich_luy > 2000 && data[i].diem_tich_luy < 3000){
-                            html += "<b>Thành viên : </b> <span class='sodon text-warning'>Vàng <i class='fas fa-crown'></i></span><br/>";
+                            html += "<b>Thành viên : </b> <span class='sodon' style='color: #949ba2'>Bạc <i class='fas fa-crown'></i></span><br/>";
                         } else if(data[i].diem_tich_luy > 3000){
                             html += "<b>Thành viên : </b> <span class='sodon text-warning'>Vàng <i class='fas fa-crown'></i></span><br/>";
                         }

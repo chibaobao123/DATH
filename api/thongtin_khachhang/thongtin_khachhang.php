@@ -20,6 +20,31 @@
 			$r['avatar'] = $row['6'];
 			$r['diem_tich_luy'] = $row['8'];
 			$r['so_don'] = $row['9'];
+			$r['username'] = $row['10'];
+			array_push($json_response, $r);
+		}
+		
+		echo json_encode($json_response);
+    }
+
+	if (isset($_GET['action']) && $_GET['action'] == 'thongtin_khachhang_username') {
+		$ten = trim($_GET['ten']);
+
+        $sql = "SELECT * FROM thong_tin_khach_hang WHERE username = '$ten'";
+		$rs = mysqli_query($db, $sql);
+		$json_response = array();
+		
+		while($row = mysqli_fetch_row($rs)) {
+			$r['id'] = $row['0'];
+			$r['ten'] = $row['1'];
+			$r['email'] = $row['2'];
+			$r['sdt'] = $row['3'];
+			$r['sex'] = $row['4'];
+			$r['dia_chi'] = $row['5'];
+			$r['avatar'] = $row['6'];
+			$r['diem_tich_luy'] = $row['8'];
+			$r['so_don'] = $row['9'];
+			$r['username'] = $row['10'];
 			array_push($json_response, $r);
 		}
 		

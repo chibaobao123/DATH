@@ -1,13 +1,17 @@
- <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="logo.png" alt="">
-                </span>
 
+<nav class="sidebar close">
+        <header>
+            <div class="image-text">    
+                <span class="image" >
+                    <img src="../asset/img_nhahang/<?php echo $_SESSION['avatar_icon_admin']?>" height="70" width="50" />
+                </span>
                 <div class="text logo-text">
-                    <span class="name">Codinglab</span>
-                    <span class="profession">Web developer</span>
+                    <span class="name" id="tenNhaHang">
+                        <?php echo $_SESSION['login_admin']?>
+                    </span>
+                    <span class="profession" id="maNhaHang">
+                        <?php echo $_SESSION['username_admin']?>
+                    </span>
                 </div>
             </div>
 
@@ -16,32 +20,29 @@
 
         <div class="menu-bar">
             <div class="menu">
-
-                
-
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="#" onclick="openTab(event, 'trangChu')" id="defaultOpen">
                             <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
+                            <span class="text nav-text">Trang Chủ</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Revenue</span>
+                        <a href="#" onclick="openTab(event, 'donHang')">
+                            <i class='bx bx-receipt icon'></i>
+                            <span class="text nav-text">Đơn hàng</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
+                        <a href="#" onclick="openTab(event, 'sanPham')">
+                            <i class='bx bx-archive icon'></i>
+                            <span class="text nav-text">Sản phẩm</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    <!-- <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <span class="text nav-text">Analytics</span>
@@ -60,14 +61,14 @@
                             <i class='bx bx-wallet icon' ></i>
                             <span class="text nav-text">Wallets</span>
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="./logOutAdmin.php">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -90,8 +91,15 @@
 
     </nav>
 
-    <section class="home">
-        <div>
-            <canvas id="myChart" height="130" style="margin:20px"></canvas>
-        </div>
+    <section class="home tabcontent" id="trangChu" >
+        <?php include("../views/trangAdmin/trangChu.php"); ?>
     </section>
+
+    <section class="home tabcontent" id="donHang" >
+        <?php include("../views/trangAdmin/donHang.php"); ?>
+    </section>
+    
+    <section class="home tabcontent" id="sanPham">
+        <?php include("../views/trangAdmin/sanPham.php"); ?>
+    </section>
+   

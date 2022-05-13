@@ -108,15 +108,15 @@
                 success: function(data) {
                     // console.log(data); 
 
-                    let data_profile = $.parseJSON(data);
+                    let data_profile = sapXep($.parseJSON(data));
                     // console.log(data_profile)
 
                     let tat_ca = addDataOfProductsSelect(data_profile);
-                    let cho_xac_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '1'))
-                    let cho_lay_hang = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '2'))
-                    let dang_giao = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '3'))
-                    let da_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '4'))
-                    let da_huy = addDataOfProductsSelect(data_profile.filter(sp => sp.tinh_trang == '5'))
+                    // let cho_xac_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 1))
+                    // let cho_lay_hang = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 2))
+                    // let dang_giao = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 3))
+                    // let da_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 4))
+                    // let da_huy = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 5))
 
                     $("#table_tatca").html(tat_ca);
                     $("#table_choxacnhan").html(cho_xac_nhan);
@@ -124,8 +124,6 @@
                     $("#table_danggiao").html(dang_giao);
                     $("#table_danhan").html(da_nhan);
                     $("#table_dahuy").html(da_huy);
-
-                    
                 }
             });
         }
@@ -134,51 +132,43 @@
         
 
         
-        function addDataOfProductsSelect(data){
-            // console.log(data)    
-            let html = "";
+    function addDataOfProductsSelect(data){
+        console.log(data)    
+        let html = "";
 
-            for (let i = 0; i < data.length; i++) {
-                    
-                html += "<div class='container table_sanpham text-light my-2'>"
-                html += "<div class='row title_sanpham_order title_sanpham_order_cursor py-5' onclick=chiTietSanPhamOrder('" + data[i].ma_monan + "','" + data[i].ma_nhahang + "')>"
-
-                if(data[i].img_monan == ''){
-                    html += "<div class='col-3 img_sanpham text-right'><img src='https://via.placeholder.com/150'/></div>"
-                } else {
-                    html += "<div class='col-3 img_sanpham text-right'><img src='../asset/img_products/" + data[i].img_monan + "'/></div>"
-                }
-
-                html += "<div class='col-7 '>"
-                html += "<p class='tittle_sanpham' >" + data[i].ten_monan + "</p>"
-                html += "<p>Tên nhà hàng: <strong class='show_sp_nhahang_" + i + "'>" + data[i].ten + "</strong></p>"
-                html += "<p class='soluong_sanpham'>Số lượng : <span class='show_sp_soluong_" + i + "'>" + data[i].so_luong + "</span></p>"
-                html += "</div>"
-                html += "<div class='col-2 gia_sanpham align-self-center'>"
-                html += "<p class='show_sp_giatien_" + i + "' style='display:none'>" + parseInt(data[i].gia_tien) + " </p>"
-                html += "</div>"
-                html += "</div>"
-                html += "<div class='tongtien_sanpham d-flex justify-content-end py-2 my-2'>"
-                html += "<div class='tong_tien pr-5'>Tổng tiền: <span class='tong_tien pr-5' tong_tien='" + parseInt(data[i].gia_tien) + "'>" + parseInt(data[i].gia_tien).toLocaleString('vi-VN') + "</span></div>"
-                html += "</div>"
-                html += "<div class='btn_lienhe_nhanhang pb-4 d-flex justify-content-end'>"
-                html += "<button class='danhanhang' onclick=daNhanHang('"+ data[i].ma_monan +"','" + data[i].ma_nhahang + "')>Đã nhận hàng</button>"
-                html += "<button class='lienhenguoiban'>Liên hệ người bán</button>"
-                html += "</div>"
-                html += "</div>"
-
+        for (let i of data) {
                 
+            html += "<div class='container table_sanpham text-light my-2'>"
+            html += "<div class='row title_sanpham_order title_sanpham_order_cursor py-5' onclick=chiTietSanPhamOrder('" + i.date + "','" + i.ma_nhahang + "','" + i.name + "')>"
 
+            if(i.img_monan == ''){
+                html += "<div class='col-3 img_sanpham text-right'><img src='https://via.placeholder.com/150'/></div>"
+            } else {
+                html += "<div class='col-3 img_sanpham text-right'><img src='../asset/img_nhahang/" + i.img + "'style='height:100%;width:100%;'/></div>"
             }
 
-            // $("#table_tatca").html(html);
-            return html;
+            html += "<div class='col-7 '>"
+            html += "<p class='tittle_sanpham' >" + i.ten_nhahang + "</p>"
+            html += "<p>Địa chỉ của hàng: <strong>" + i.dia_chi + "</strong></p>"
+            html += "<p>Số điện thoại của hàng: <strong>" + i.sdt + "</strong></p>"
+            html += "<p>Người nhận: <strong>" + i.name + "</strong></p>"
+            html += "<p>Ngày đặt hàng: <strong>" + i.date + "</strong></p>"
+            html += "<p class='soluong_sanpham'>Số lượng : <span class='show_sp_soluong_" + i + "'>" + i.data.length + "</span></p>"
+            html += "</div>"
+            html += "</div>"
+
+            
+
         }
+
+        // $("#table_tatca").html(html);
+        return html;
+    }
 
 
     });
 
-    function chiTietSanPhamOrder(ma_monan, ma_nhahang){
+    function chiTietSanPhamOrder(date, nhahang, user){
             // console.log(ma_monan, ma_nhahang, ten);
             $('.thongtin_chitiet_donhang').toggle();
             $('.tongthe_sanpham_donhang').toggle();
@@ -191,11 +181,13 @@
                 cache: false,
                 data: {
                     action : 'chiTietSanPham',
-                    ma_monan: ma_monan,
-                    ma_nhahang: ma_nhahang,
-                    ten: ten,
+                    ten,
+                    date,
+                    nhahang,
+                    user
                 },
                 success: function(msg) {
+                    // console.log(msg);
 
                     let data = $.parseJSON(msg);
                     console.log(data);
@@ -205,18 +197,225 @@
                     let html_1 = "";
                     let html = '';
                     let tong_tien = '';
+                    let trangThai = '';
+                    let gia_tien = 0;
 
-                    html += "<div class='col-3 img_sanpham text-center'>"
-                    html += "<img src='../asset/img_products/" + data[0].img_monan + "'/>"
-                    html += "</div>"
-                    html += "<div class='col-7 '>"
-                    html += "<p class='tittle_sanpham'>" + data[0].ten_monan + "</p>"
-                    html += "<p class='nhahang_sanpham'>Mã nhà hàng : " + data[0].ma_nhahang + "</p>"
-                    html += "<p class='soluong_sanpham'>Số lượng : " + data[0].so_luong + "</p>"
-                    html += "</div>"
-                    html += "<div class='col-2 gia_sanpham align-self-center'>"
-                    html += "<p>" + parseInt(data[0].gia_tien).toLocaleString('vi-VN') + "</p>"
-                    html += "</div>"
+                    for(let i of data) {
+                        html += "<div class='col-3 img_sanpham text-center'>"
+                        html += "<img src='../asset/img_products/" + i.img_monan + "'/>"
+                        html += "</div>"
+                        html += "<div class='col-7 '>"
+                        html += "<p class='tittle_sanpham'>" + i.ten_monan + "</p>"
+                        html += "<p class='nhahang_sanpham'>Mã nhà hàng : " + i.ma_nhahang + "</p>"
+                        html += "<p class='soluong_sanpham'>Số lượng : " + i.so_luong + "</p>"
+                        html += "</div>"
+                        html += "<div class='col-2 gia_sanpham align-self-center'>"
+                        html += "<p>" + parseInt(i.gia_tien).toLocaleString('vi-VN') + "</p>"
+                        html += "</div>"
+                    }
+
+
+                    let tinh_trang = '';
+                    console.log(data[0].tinh_trang)
+                    switch (Number(data[0].tinh_trang)){
+                        case 1:
+                            tinh_trang = `<div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-check rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-shipping-fast rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-download rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-star rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>`;
+                            break;
+                        case 2:
+                            tinh_trang = `<div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-check rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-shipping-fast rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-download rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-star rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>`;
+                            break;
+                        case 3:
+                            tinh_trang = `<div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-check rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-shipping-fast rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-download rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-star rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>`;
+                            break;
+                        case 4:
+                            tinh_trang = `<div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-check rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-shipping-fast rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-download rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid #6c757d'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-star rounded-circle p-4 text-secondary' style='border: 5px solid #6c757d; font-size:2rem;'></i>
+                                    </div>
+                                </div>`;
+                            break;
+                        case 5:
+                            tinh_trang = `<div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-check rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-shipping-fast rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-download rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>
+
+                                <div class='w-100' style='border-top: 5px solid green'></div>
+
+                                <div class='don_hang_icon_layout'>
+                                    <div class='don_hang_icon'>
+                                        <i class='fas fa-star rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
+                                    </div>
+                                </div>`;
+                            break;
+                    }
+
+
 
                     html_1 += "<div class='row'>"
                     html_1 += "<div class='col-6'>"
@@ -232,17 +431,23 @@
                     html_1 += "<div class='phi_van_chuyen_content h-100 '>Phí vận chuyển:</div>"
                     html_1 += "</div>"
                     html_1 += "<div class='col-3 text-right pb-5 align-self-center border-bottom border-light'>"
-                    html_1 += "<div class='tong_tien_hang h-100'>" + parseInt(data[0].gia_tien).toLocaleString('vi-VN') + "</div>"
+
+                    for(let i of data) {
+                        gia_tien += Number(i.gia_tien)
+                    }
+                    html_1 += "<div class='tong_tien_hang h-100'>" + parseInt(gia_tien).toLocaleString('vi-VN') + "</div>"
+
+
                     html_1 += "<div class='phi_van_chuyen h-100'>" + parseInt(ship).toLocaleString('vi-VN') + "</div>"
                     html_1 += "</div>"
                     html_1 += "</div>"
-
-                    tong_tien += "<span>" + (parseInt(data[0].gia_tien) + parseInt(ship)).toLocaleString('vi-VN') + "</span>"
+                    
+                    tong_tien += "<span>" + (parseInt(gia_tien) + parseInt(ship)).toLocaleString('vi-VN') + "</span>"
 
                     $('#chi_tiet_san_pham').html(html)
                     $("#thong_khach_hang_order").html(html_1);
                     $(".tong_tien").html(tong_tien);
-
+                    $('#tinhTrangDonHang').html(tinh_trang)
                                 
                 }
             })
@@ -279,4 +484,7 @@
             })
 
     }
+
+    
 </script>
+

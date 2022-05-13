@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 07:13 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Apr 24, 2022 at 05:04 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,9 +45,12 @@ CREATE TABLE `don_hang` (
 --
 
 INSERT INTO `don_hang` (`id`, `ma_monan`, `ten_monan`, `ma_nhahang`, `so_luong`, `img_monan`, `username`, `ngay_dat`, `gia_tien`, `tinh_trang`) VALUES
-(2, 'mocha', 'Mocha', 'nhapham', 2, 'mocha.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 80000, 0),
-(3, 'capucchino', 'Capucchino', 'nhapham', 3, 'capucchino.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 120000, 0),
-(4, 'suaGaoSuongSam', 'Sữa gạo sương sâm', 'nhapham', 3, 'suaGaoSuongSam.jpg', 'baobaochi', 'Fri Nov 26 2021 12:56:24 GMT+0700 (Indochina Time)', 120000, 0);
+(2, 'mocha', 'Mocha', 'nhapham', 2, 'mocha.jpg', 'baobaochi', '1/4/2022', 80000, 4),
+(3, 'capucchino', 'Capucchino', 'nhapham', 3, 'capucchino.jpg', 'baobaochi', '2/5/2022', 120000, 4),
+(4, 'suaGaoSuongSam', 'Sữa gạo sương sâm', 'nhapham', 3, 'suaGaoSuongSam.jpg', 'baobaochi', '21/4/2022', 120000, 4),
+(5, 'traAtiso', 'Trà Atiso', 'nhapham', 5, 'traAtiso.jpg', 'baobaochi', '21/1/2022', 40000, 4),
+(6, 'phinDrip', 'Phin Drip', 'nhapham', 3, 'phinDrip.jpg', 'baobaochi', '21/4/2022', 90000, 4),
+(7, 'traAtiso', 'Trà Atiso', 'nhapham', 1, 'traAtiso.jpg', 'baobaochi', '21/1/2022', 40000, 4);
 
 -- --------------------------------------------------------
 
@@ -154,8 +157,8 @@ CREATE TABLE `tai_khoan` (
 --
 
 INSERT INTO `tai_khoan` (`id`, `ten`, `username`, `email`, `sdt`, `password`, `rank`) VALUES
-(2, 'Huynh Trinh Thai Long', 'thailong', 'thailong.py2014@gmail.com', '0503154786', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(3, 'Chí Bảo Bảo', 'baobaochi', 'baobaochi631999@gmail.com', '0703934583', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(2, 'Huynh Trinh Thai Long', 'thailong', 'thailong2015py@gmail.com', '0503154786', '75da0d3939e26d9006dc40c440a1f1ec', 1),
+(3, 'Chí Bảo Bảo', 'baobaochi', 'baobaochi631999@gmail.com', '0703934583', '9efd286a12c573df7b481fcb021d9fc7', 1),
 (4, 'Phạm Nguyễn Minh Hiếu', 'hieuhieu', 'hieuhieu@gmail.com', '0132654782', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 -- --------------------------------------------------------
@@ -183,7 +186,7 @@ CREATE TABLE `thong_tin_khach_hang` (
 
 INSERT INTO `thong_tin_khach_hang` (`id`, `ten`, `email`, `sdt`, `sex`, `dia_chi`, `avatar`, `rank`, `diem_tich_luy`, `so_don`) VALUES
 (1, 'Huynh Trinh Thai Long', 'thailong.py2014@gmail.com', '0503154786', '', '100 đường số 3, quận Bình thạnh, phường 3', '', 1, 0, 0),
-(2, 'Chí Bảo Bảo', 'baobaochi631999@gmail.com', '0703934583', 'nam', '28 đường số 2, quận Gò Vâp, phường 3', 'IMG-618a23be5650e5.02531344.jpg', 1, 0, 0),
+(2, 'Chí Bảo Bảo', 'baobaochi631999@gmail.com', '0703934583', 'nam', '28 đường số 2, quận Gò Vâp, phường 3', 'IMG-6236c91687dd39.36625856.png', 1, 0, 0),
 (3, 'Phạm Nguyễn Minh Hiếu', 'hieuhieu@gmail.com', '0132654782', '', '123 Kha Vạn Cân, quận Thủ Đức, phường Linh Đông', '', 1, 0, 0),
 (4, 'Ngo Phuoc Loc', 'phuocloc@gmail.com', '0503154755', '', '100 Phan Xích Long, quận Phú Nhuận, phường 3', '', 1, 0, 0),
 (5, 'Ngo Phuoc Loc', 'phuocloc@gmail.com', '0503154755', '', '100 Phan Xích Long, quận Phú Nhuận, phường 3', '', 1, 0, 0),
@@ -231,7 +234,7 @@ ALTER TABLE `thong_tin_khach_hang`
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mon_an`

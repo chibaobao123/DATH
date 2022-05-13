@@ -36,6 +36,35 @@
         }
     }
 
+    if (isset($_POST['action']) && $_POST['action'] == 'dangnhapAdmin') {
+        $username = $_POST['username'];
+        $password = md5($_POST['password']);
+        
+        $sql = "SELECT * FROM tai_khoan WHERE password ='$password' AND username='$username' OR email = '$username' AND password ='$password' ";
+        $rs = mysqli_query($db, $sql);
+        $count = mysqli_num_rows($rs);
+        
+        if ($count == 1) {
+            $rss = mysqli_fetch_assoc($rs);
+
+            $ten = $rss['ten'];
+             
+            $sql_thongtin = "SELECT * FROM nha_hang WHERE ten='$ten'";
+            $rs_thongtin = mysqli_query($db, $sql_thongtin);
+            $rss_thongtin = mysqli_fetch_assoc($rs_thongtin);
+
+            $_SESSION['rank_admin'] = $rss['rank'];
+            $_SESSION['login_admin'] = $rss['ten'];
+            $_SESSION['sdt_admin'] = $rss['sdt'];
+            $_SESSION['dia_chi_admin'] = $rss_thongtin['dia_chi'];
+            $_SESSION['username_admin'] = $rss['username'];
+            $_SESSION['avatar_icon_admin'] = $rss_thongtin['img_nhahang'];
+            echo 'success';
+        } else {
+            echo "Tên đăng nhập hoặc mật khẩu không đúng!";
+        }
+    }
+
     if(isset($_POST['action']) && $_POST['action'] == 'layLaiMatKhau') {
         $email = $_POST['inp'];
         $passMoi = uniqid();

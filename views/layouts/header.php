@@ -33,7 +33,7 @@
         <a class="img-khach-hang-navbar" href="../thong_tin_khach_hang/thongtin_user.php?username=<?php echo $_SESSION['username'] ?>">
           <img id="img-khach-hang-navbar" src="../asset/img_user/<?php echo $_SESSION['avatar_icon'] ?>" height="30" width="30" alt="avatar"/>
         </a>
-        <button type="button" class="btn text-light" data-toggle="modal" data-target="#shopping-cart-body" style="position:relative;">
+        <button type="button" id="btnShoppingCart" class="text-light" data-toggle="modal" data-target="#shopping-cart-body" style="position:relative;">
           <i class="fas fa-shopping-cart"></i>
           <span id="tong_so_luong" style="position:absolute;top:-10px"></span>
         </button>
@@ -152,7 +152,7 @@
                                 html += "<td><strong><a class='ten_sanpham_order' ma_monan='" + data_sp[item].ma_monan + "' ma_nhahang='" + data_sp[item].ma_nhahang + "' dia_chi='" + data_sp[item].dia_chi + "' href='../san_pham/index.php?id=" + data_sp[item].id + "&ma_monan=" + data_sp[item].ma_monan + "&ma_nhahang=" + data_sp[item].ma_nhahang + "'>" + data_sp[item].ten + "</a></strong></td>"
                                 html += "<td><input class='so_luong_order' type='number' name='so_luong' value = '" + data_sp[item].so_luong +"' style='width:50px'/></td>"
                                 html += "<td class='text-right gia_sanpham_order' gia='"+ (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)) + "'>" + (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)).toLocaleString('vi-VN') + "</td>"
-                                html += "<td class='text-center'><button onClick = 'addToCart('remove','" + data_sp[item].ma_monan + "')' class='btnRemoveAction cart-action btn text-danger'><i class='fas fa-times-circle'></i></button></td>"
+                                html += "<td class='text-center'><button onClick = addToCart('remove','" + data_sp[item].ma_monan + "') class='btnRemoveAction cart-action btn text-danger'><i class='fas fa-times-circle'></i></button></td>"
                                 html += "</tr>"
 
                                 tong_tien += parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)

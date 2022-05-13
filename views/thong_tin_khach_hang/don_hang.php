@@ -4,44 +4,8 @@
     </div>
 
     <div id='' class='mt-1'>
-        <div class='container table_sanpham text-light my-2 d-flex  align-items-center p-4'>
-            <div class='don_hang_icon_layout'>
-                <div class='don_hang_icon'>
-                    <i class='fas fa-receipt rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
-                </div>
-            </div>
-
-            <div class='w-100' style='border-top: 5px solid green'></div>
-
-            <div class='don_hang_icon_layout'>
-                <div class='don_hang_icon'>
-                    <i class='fas fa-check rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
-                </div>
-            </div>
-
-            <div class='w-100' style='border-top: 5px solid green'></div>
-
-            <div class='don_hang_icon_layout'>
-                <div class='don_hang_icon'>
-                    <i class='fas fa-shipping-fast rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
-                </div>
-            </div>
-
-            <div class='w-100' style='border-top: 5px solid green'></div>
-
-            <div class='don_hang_icon_layout'>
-                <div class='don_hang_icon'>
-                    <i class='fas fa-download rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
-                </div>
-            </div>
-
-            <div class='w-100' style='border-top: 5px solid green'></div>
-
-            <div class='don_hang_icon_layout'>
-                <div class='don_hang_icon'>
-                    <i class='fas fa-star rounded-circle p-4 text-success' style='border: 5px solid green; font-size:2rem;'></i>
-                </div>
-            </div>
+        <div class='container table_sanpham text-light my-2 d-flex  align-items-center p-4' id='tinhTrangDonHang'>
+            
         </div>
 
         <div class='container table_sanpham  text-light mt-1' >
