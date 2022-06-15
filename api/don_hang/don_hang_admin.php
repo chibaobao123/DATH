@@ -20,6 +20,52 @@
 		echo json_encode($json_response);
     }
 
+    // if (isset($_GET['action']) && $_GET['action'] == 'timKiemHoaDon') {
+    //     $ma_nhahang = $_GET['ma_nhahang'];
+    //     $val = $_GET['inp'];
+
+    //     $sql = "SELECT *
+    //             FROM don_hang 
+    //             WHERE ma_nhahang = '$ma_nhahang' AND ngay_dat like '%$val%' 
+    //                     OR  ma_nhahang = '$ma_nhahang' AND username like '%$val%'
+    //                     OR  ma_nhahang = '$ma_nhahang' AND username like '%$val%'";
+                
+    //     $rs = mysqli_query($db, $sql);
+    //     $json_response = array();
+		
+	// 	while($row = mysqli_fetch_assoc($rs)) {
+			
+	// 		array_push($json_response, $row);
+	// 	}
+		
+	// 	echo json_encode($json_response);
+    // }
+
+    if (isset($_GET['action']) && $_GET['action'] == 'getDataOfProductsSelectTrangThai') {
+        $ma_nhahang = $_GET['ma_nhahang'];
+        $trang_thai = $_GET['trangThai'];
+
+        if($trang_thai == ''){
+            $sql = "SELECT *
+            FROM don_hang 
+            WHERE ma_nhahang = '$ma_nhahang'";
+        } else {
+            $sql = "SELECT *
+                FROM don_hang 
+                WHERE ma_nhahang = '$ma_nhahang' AND tinh_trang = '$trang_thai'";
+        }
+                  
+        $rs = mysqli_query($db, $sql);
+        $json_response = array();
+		
+		while($row = mysqli_fetch_assoc($rs)) {
+			
+			array_push($json_response, $row);
+		}
+		
+		echo json_encode($json_response);
+    }
+
     if (isset($_POST['action']) && $_POST['action'] == 'xacNhanDonHang') {
         $username = $_POST['ten'];
         $ngayDat = $_POST['ngayDat'];

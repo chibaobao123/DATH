@@ -112,11 +112,11 @@
                     // console.log(data_profile)
 
                     let tat_ca = addDataOfProductsSelect(data_profile);
-                    // let cho_xac_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 1))
-                    // let cho_lay_hang = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 2))
-                    // let dang_giao = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 3))
-                    // let da_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 4))
-                    // let da_huy = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 5))
+                    let cho_xac_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 1))
+                    let cho_lay_hang = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 2))
+                    let dang_giao = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 3))
+                    let da_nhan = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 4))
+                    let da_huy = addDataOfProductsSelect(data_profile.filter(sp => sp.trangThai == 5))
 
                     $("#table_tatca").html(tat_ca);
                     $("#table_choxacnhan").html(cho_xac_nhan);
@@ -149,11 +149,12 @@
 
             html += "<div class='col-7 '>"
             html += "<p class='tittle_sanpham' >" + i.ten_nhahang + "</p>"
-            html += "<p>Địa chỉ của hàng: <strong>" + i.dia_chi + "</strong></p>"
-            html += "<p>Số điện thoại của hàng: <strong>" + i.sdt + "</strong></p>"
+            html += "<p>Địa chỉ cửa hàng: <strong>" + i.dia_chi + "</strong></p>"
+            html += "<p>Số điện thoại cửa hàng: <strong>" + i.sdt + "</strong></p>"
             html += "<p>Người nhận: <strong>" + i.name + "</strong></p>"
             html += "<p>Ngày đặt hàng: <strong>" + i.date + "</strong></p>"
-            html += "<p class='soluong_sanpham'>Số lượng : <span class='show_sp_soluong_" + i + "'>" + i.data.length + "</span></p>"
+            html += "<p class='soluong_sanpham'>Số sản phẩm : <span class='show_sp_soluong_" + i + "'>" + i.data.length + "</span></p>"
+            html += "</div>"
             html += "</div>"
             html += "</div>"
 
@@ -202,7 +203,7 @@
 
                     for(let i of data) {
                         html += "<div class='col-3 img_sanpham text-center'>"
-                        html += "<img src='../asset/img_products/" + i.img_monan + "'/>"
+                        html += "<img src='../asset/img_products/" + i.img_monan + "'height='150' width='150'/>"
                         html += "</div>"
                         html += "<div class='col-7 '>"
                         html += "<p class='tittle_sanpham'>" + i.ten_monan + "</p>"
@@ -487,4 +488,6 @@
 
     
 </script>
+
+
 

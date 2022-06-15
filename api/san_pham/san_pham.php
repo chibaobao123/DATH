@@ -374,6 +374,22 @@
 
 	}
 
+	if (isset($_POST['action']) && $_POST['action'] == 'anHienSanPham') {
+
+		$num = $_POST['num'];
+		$ma_monan = $_POST['maMonAn'];
+
+		$sql = mysqli_query($db,"UPDATE mon_an 
+								SET tinh_trang = $num
+								WHERE ma_monan = '$ma_monan'");
+		if($sql){
+			echo $msg = "success";
+		} else {
+			echo $msg = "error";
+		}
+		
+    } 
+
 	# check if image sent
 	if (isset($_FILES['my_image'])) {
 			# getting image data and store them in var

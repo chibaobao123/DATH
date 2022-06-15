@@ -4,7 +4,7 @@ const body = document.querySelector("body"),
   modeSwitch = body.querySelector(".toggle-switch"),
   modeText = body.querySelector(".mode-text");
 
-let rs = [];
+let rs = new Array();
 let arrLayThongTinHoaDon = [];
 
 getDonHang();
@@ -67,9 +67,10 @@ function getDonHang() {
     success: function (data) {
       // console.log((data));
       let rs_data = $.parseJSON(data).filter((a) => a.tinh_trang != 5);
+      let rs_data_tong = $.parseJSON(data);
       // console.log(rs)
 
-      rs.push(rs_data);
+      rs.push(rs_data_tong);
       // console.log(rs);
 
       getDonHangChoAdmins(rs_data);
@@ -428,6 +429,7 @@ function renderHoaDon(rs) {
         name: rs[i].username,
         date: rs[i].ngay_dat,
         trangThai: rs[i].tinh_trang,
+        shipper: rs[i].shipper,        
         data: [rs[i]],
       };
 
@@ -438,6 +440,7 @@ function renderHoaDon(rs) {
           name: rs[i].username,
           date: rs[i].ngay_dat,
           trangThai: rs[i].tinh_trang,
+          shipper: rs[i].shipper,          
           data: [rs[i]],
         };
 
@@ -472,9 +475,9 @@ function renderHoaDon(rs) {
 
     function checkTrangThai(trangthai) {
       if (trangthai == 1) {
-        trang_thai = `<span style="color:#ffc107">CHỜ XÁC NHẬN</span>`;
+        trang_thai = `<span style="color:#ed5e54">CHỜ XÁC NHẬN</span>`;
       } else if (trangthai == 2) {
-        trang_thai = `<span style="color:#ffc107">CHỜ LẤY HÀNG</span>`;
+        trang_thai = `<span style="color:#c0a904">CHỜ LẤY HÀNG</span>`;
       } else if (trangthai == 3) {
         trang_thai = `<span style="color:#007bff">ĐANG GIAO</span>`;
       } else if (trangthai == 4) {
@@ -483,17 +486,15 @@ function renderHoaDon(rs) {
         trang_thai = `<span style="color:red">ĐÃ HỦY</span>`;
       }
     }
+
     return `
-      <tr class="tenKhachHangHoaDon" style="cursor: pointer;text-align:center" onclick=layThongTinHoaDon('${
-        a.name
-      }','${a.date}','${a.trangThai}')>
+      <tr class="tenKhachHangHoaDon" style="cursor: pointer;text-align:center" onclick=layThongTinHoaDon('${a.name}','${a.date}','${a.trangThai}')>
         <th scope="row">${dem++}</th>
         <td>${a.name}</td>
         <td>${a.date}</td>
         <td>${trang_thai}</td>
-        <td><i class='bx bx-receipt' onclick=layThongTinHoaDon('${a.name}','${
-      a.date
-    }','${a.trangThai}')></i></td>
+        <td>${a.shipper}</td>
+        <td><i class='bx bx-receipt' onclick=layThongTinHoaDon('${a.name}','${a.date}','${a.trangThai}',${a.ly_do_huy})></i></td>
       </tr>
     `;
   });
@@ -503,14 +504,100 @@ function renderHoaDon(rs) {
   // console.log(arrHoaDon);
 }
 
+function timKiemHoaDon() {
+  let inp = document.getElementById('inpTimKiemHoaDon').value.trim();
+  let ma_nhahang = document.getElementById("maNhaHang").innerHTML.trim();
+  let  arrHoaDonTimKiem = [];
+  // console.log(inp);
+  // console.log(arrLayThongTinHoaDon);
+
+  // console.log(str.toLocaleUpperCase().indexOf(st.toLocaleUpperCase()) > -1)
+
+  let date = arrLayThongTinHoaDon.filter(a => a.date.toLocaleUpperCase().indexOf(inp.toLocaleUpperCase()) > -1);
+  let name = arrLayThongTinHoaDon.filter(a => a.name.toLocaleUpperCase().indexOf(inp.toLocaleUpperCase()) > -1);
+
+  for (let i of name){
+    arrHoaDonTimKiem.push(i)
+  }
+
+  for (let i of date){
+    arrHoaDonTimKiem.push(i)
+  }
+  // console.log(arrHoaDonTimKiem);
+
+
+  let html = arrHoaDonTimKiem.map((a) => {
+    // console.log(a);
+    let trang_thai = "";
+    let dem = 1;
+    
+    checkTrangThai(a.trangThai);
+
+    function checkTrangThai(trangthai) {
+      if (trangthai == 1) {
+        trang_thai = `<span style="color:#ed5e54">CHỜ XÁC NHẬN</span>`;
+      } else if (trangthai == 2) {
+        trang_thai = `<span style="color:#c0a904">CHỜ LẤY HÀNG</span>`;
+      } else if (trangthai == 3) {
+        trang_thai = `<span style="color:#007bff">ĐANG GIAO</span>`;
+      } else if (trangthai == 4) {
+        trang_thai = `<span style="color:#04AA6D">ĐÃ NHẬN</span>`;
+      } else if (trangthai == 5) {
+        trang_thai = `<span style="color:red">ĐÃ HỦY</span>`;
+      }
+    }
+
+    return `
+      <tr class="tenKhachHangHoaDon" style="cursor: pointer;text-align:center" onclick=layThongTinHoaDon('${a.name}','${a.date}','${a.trangThai}')>
+        <th scope="row">${dem++}</th>
+        <td>${a.name}</td>
+        <td>${a.date}</td>
+        <td>${trang_thai}</td>
+        <td>${a.shipper}</td>
+        <td><i class='bx bx-receipt' onclick=layThongTinHoaDon('${a.name}','${a.date}','${a.trangThai}',${a.ly_do_huy})></i></td>
+      </tr>
+    `;
+  });
+
+  document.getElementById("tbody").innerHTML = html;
+
+  
+}
+
+function renderHoaDonTheoTrangThai(trangThai, title) {
+  let ma_nhahang = document.getElementById("maNhaHang").innerHTML.trim();
+  // console.log(trangThai, title, ma_nhahang);
+  $.ajax({
+    url: "../api/don_hang/don_hang_admin.php",
+    type: "GET",
+    cache: false,
+    data: {
+      action: "getDataOfProductsSelectTrangThai",
+      ma_nhahang: ma_nhahang,
+      trangThai: trangThai,
+    },
+    success: function (data) {
+      // console.log((data));
+      let res = $.parseJSON(data);
+      // console.log(res.length)
+      if(res.length == 0) {
+        document.getElementById("tbody").innerHTML = '<tr><td colspan="5" style="text-align:center">hiện tại chưa có thông tin hóa đơn !!!</td></tr>';
+      }else {
+        renderHoaDon(res);
+      }
+    },
+  });
+
+}
+
 function layThongTinHoaDon(ten, ngayDat, trangthai) {
-  // console.log(ten,ngayDat,trangthai);
+  console.log(ten,ngayDat,trangthai);
 
   let hoaDon = arrLayThongTinHoaDon.find(
     ({ name, date, trangThai }) =>
       name == ten && date == ngayDat && trangThai == trangthai
   );
-  // console.log(hoaDon);
+  console.log(hoaDon);
 
   let dataHoaDon = hoaDon.data.map((a) => {
     // console.log(a)
@@ -527,27 +614,30 @@ function layThongTinHoaDon(ten, ngayDat, trangthai) {
 
   let trang_thai = "",
     btn = "";
+    lyDoHuyDon = "";
 
   checkTrangThai(trangthai, ten, ngayDat);
 
   function checkTrangThai(trangthai, ten, ngayDat) {
     if (trangthai == 1) {
-      trang_thai = `<span style="color:#ffc107">CHỜ XÁC NHẬN</span>`;
-      btn = `<button class="btn btn-xacNhan" onclick=thayDoiTrangThai('${ten}','${ngayDat}','${trangthai}','xacNhanDonHang')>Xác nhận đơn hàng</button>`;
+      trang_thai = `<span style="color:#ffc107">CHỜ XÁC NHẬN BỞI CỬA HÀNG</span>`;
+      btn = `<button class="btn btn-xacNhan" onclick=thayDoiTrangThai('${ten}','${ngayDat}','${trangthai}','xacNhanDonHang')>Xác nhận đơn hàng</button> 
+      <button class="btn btn-light" onclick=thayDoiTrangThai('${ten}','${ngayDat}','${trangthai}','huyDon')>Hủy đơn</button>
+      `;
     } else if (trangthai == 2) {
       trang_thai = `<span style="color:#ffc107">CHỜ LẤY HÀNG</span>`;
       btn = `<button class="btn btn-xuatHang" onclick=thayDoiTrangThai('${ten}','${ngayDat}','${trangthai}','xuatDonHang')>Xuất hàng</button>`;
     } else if (trangthai == 3) {
-      trang_thai = `<span style="color:#007bff">ĐANG GIAO</span>`;
+      trang_thai = `<span style="color:#007bff">ĐANG GIAO CHO KHÁCH HÀNG</span>`;
       btn = `<button class="btn cancelbtn" onclick=thayDoiTrangThai('${ten}','${ngayDat}','${trangthai}','huyDon')>Hủy đơn</button>`;
     } else if (trangthai == 4) {
-      trang_thai = `<span style="color:#04AA6D">ĐÃ NHẬN</span>`;
+      trang_thai = `<span style="color:#04AA6D">KHÁCH HÀNG ĐÃ NHẬN</span>`;
     } else if (trangthai == 5) {
-      trang_thai = `<span style="color:red">ĐÃ HỦY</span>`;
+      trang_thai = `<span style="color:red">ĐƠN HÀNG ĐÃ HỦY</span>`;
     }
   }
 
-  let hoTen, sdt, diaChi, email;
+  let hoTen, sdt, diaChi, email,shipper;
 
   $.ajax({
     url: "../api/thongtin_khachhang/thongtin_khachhang.php",
@@ -567,6 +657,7 @@ function layThongTinHoaDon(ten, ngayDat, trangthai) {
       sdt = rs[0].sdt;
       diaChi = rs[0].dia_chi;
       email = rs[0].email;
+      shipper = hoaDon.shipper;
 
       let chiTietHoaDon = `<div class="grid wide">
               <div class="row">
@@ -603,6 +694,11 @@ function layThongTinHoaDon(ten, ngayDat, trangthai) {
                     <p style="text-align:right;font-weight:bold;padding:10px 5px;">
                       ${trang_thai}
                     </p>
+                    <p>Người giao hàng:</p>
+                    <p style="text-align:right;font-weight:bold;padding:10px 5px;">
+                      ${shipper}
+                    </p>
+                    ${lyDoHuyDon}
                   </div>
                 </div>
               </div>
@@ -615,6 +711,7 @@ function layThongTinHoaDon(ten, ngayDat, trangthai) {
   });
 }
 
+
 function thayDoiTrangThai(ten, ngayDat, trangThai, action) {
   // console.log(ten,ngayDat,trangThai,action);
   $.ajax({
@@ -622,16 +719,16 @@ function thayDoiTrangThai(ten, ngayDat, trangThai, action) {
     type: "POST",
     cache: false,
     data: {
-      action,
-      ten,
-      ngayDat,
-      trangThai,
+      action: action,
+      ten: ten,
+      ngayDat: ngayDat,
+      trangThai: trangThai,
     },
     success: function (msg) {
       // console.log(msg);
       let thongBao = document.getElementById("thongBao");
-      if (msg != "error") {
-        let ma_nhahang = document.getElementById("maMonAn");
+      if (msg == "Xác nhận đơn hàng thành công" || msg == "Xuất đơn thành công" || msg == "Đơn đã được hủy") {
+        let ma_nhahang = document.getElementById("maNhaHang").innerHTML.trim();
         $.ajax({
           url: "../api/don_hang/don_hang_admin.php",
           type: "GET",
@@ -643,12 +740,11 @@ function thayDoiTrangThai(ten, ngayDat, trangThai, action) {
           success: function (data) {
             // console.log((data));
             let rs_data = $.parseJSON(data).filter((a) => a.tinh_trang != 5);
-            // console.log(rs)
+            console.log(rs)
 
-            rs.push(rs_data);
+            // rs.push(rs_data);
             // console.log(rs);
-
-            renderHoaDon(rs_data);
+            renderHoaDon(rs_data);            
           },
         });
 
@@ -657,14 +753,16 @@ function thayDoiTrangThai(ten, ngayDat, trangThai, action) {
         thongBao.innerHTML = '<span style="color: #04AA6D">' + msg + "</span>";
         setTimeout(function () {
           thongBao.innerHTML = " ";
-        }, 5000);
+          document.getElementById('modalHoaDon').style.display='none'
+        }, 2000);
       } else {
         thongbaoloi(msg);
 
         thongBao.innerHTML = '<span style="color: red">' + msg + "</span>";
         setTimeout(function () {
           thongBao.innerHTML = " ";
-        }, 5000);
+          document.getElementById('modalHoaDon').style.display='none'
+        }, 2000);
       }
     },
   });
@@ -696,6 +794,23 @@ function getSanPhamAdmins() {
       let rs_data = $.parseJSON(data);
       // console.log(rs_data)
 
+      function compareTinhTrang(a, b) {
+        // Sử dụng toUpperCase() để chuyển các kí tự về cùng viết hoa
+        var typeA = a.tinh_trang.toUpperCase();
+        var typeB = b.tinh_trang.toUpperCase();
+    
+        let comparison = 0;
+        if (typeA > typeB) {
+          comparison = 1;
+        } else if (typeA < typeB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      rs_data.sort(compareTinhTrang);
+      // console.log(rs_data)
+
       let html = rs_data.map((a) => {
         let img = new Image();
         if (a.img_monan == "") {
@@ -703,6 +818,21 @@ function getSanPhamAdmins() {
         } else {
           img = `<img src="../asset/img_products/${a.img_monan}" id="imgSanPham" class="card-img-top" alt="..." height="200" width="100%">`;
         }
+
+        let btn_congcu = '';
+        if(a.tinh_trang == '1'){
+          btn_congcu = `
+            <button type="button" class="btn btn-primary btnChinhSua" onclick=chinhSuaSanPham('${a.ma_monan}')>Chỉnh sửa</button>
+            <button type="button" class="btn btn-danger btnXoa" onclick=xoaSanPham('${a.ma_monan}','${a.tinh_trang}')>Xóa</button>
+            <button type="button" class="btn btn-success btnLuu" onclick=luuChinhSuaSanPham('${a.ma_monan}')>Lưu</button>
+            <button type="button" class="btn btn-danger btnHuy" onclick=huyChinhSuaSanPham('${a.ma_monan}')>Hủy</button>
+          `
+        } else {
+          btn_congcu = `
+            <button type="button" class="btn btn-danger btnXoa" onclick=xoaSanPham('${a.ma_monan}','${a.tinh_trang}')>Phục hồi</button>
+          `
+        }
+
         return `
           <div class="l-3 m-6 c-6" style = "margin-top: 20px">
             <div class="card" style="width: 18rem;" id='${a.ma_monan}'>
@@ -723,15 +853,17 @@ function getSanPhamAdmins() {
                 <p>Thể loại:</p>
                 <input class="active" value='${a.the_loai}'/><br>
                 <div class="holdBtn" style="margin-top: 20px">
-                  <button type="button" class="btn btn-primary btnChinhSua" onclick=chinhSuaSanPham('${a.ma_monan}')>Chỉnh sửa</button>
-                  <button type="button" class="btn btn-success btnLuu" onclick=luuChinhSuaSanPham('${a.ma_monan}')>Lưu</button>
-                  <button type="button" class="btn btn-danger btnHuy" onclick=huyChinhSuaSanPham('${a.ma_monan}')>Hủy</button>
+                  ${btn_congcu}
                 </div>
               </div>
             </div>
           </div>
         `;
       });
+
+      let btn = `<span id="changeCardToListAndReverse_icon" onclick="changeCardToListAndReverse()"><i class='bx bx-credit-card-front'></i></span>`
+      
+      $("#changeCardToListAndReverse").html(btn)
 
       $("#sanPhamBody").html(html);
 
@@ -743,6 +875,9 @@ function getSanPhamAdmins() {
       );
       let btnLuu = document.querySelectorAll(
         "#sanPhamBody .card .card-body .holdBtn button.btnLuu"
+      );
+      let btnXoa = document.querySelectorAll(
+        "#sanPhamBody .card .card-body .holdBtn button.btnXoa"
       );
       let btnEditPic = document.querySelectorAll(
         "#sanPhamBody .card .card-header span"
@@ -775,6 +910,9 @@ function chinhSuaSanPham(maMonAn) {
   );
   let btnLuu = document.querySelectorAll(
     `#sanPhamBody #${maMonAn} .card-body .holdBtn button.btnLuu`
+  );
+  let btnXoa = document.querySelectorAll(
+    `#sanPhamBody #${maMonAn} .card-body .holdBtn button.btnXoa`
   );
   let btnEdit = document.querySelectorAll(
     `#sanPhamBody #${maMonAn} .card-body .holdBtn button.btnChinhSua`
@@ -811,6 +949,10 @@ function chinhSuaSanPham(maMonAn) {
 
   for (let i = 0; i < btnEdit.length; i++) {
     btnEdit[i].style.display = "none";
+  }
+
+  for (let i = 0; i < btnXoa.length; i++) {
+    btnXoa[i].style.display = "none";
   }
 }
 
@@ -851,6 +993,10 @@ function huyChinhSuaSanPham(maMonAn) {
   for (let i = 0; i < btnEdit.length; i++) {
     btnEdit[i].style.display = "inline-block";
   }
+
+  for (let i = 0; i < btnXoa.length; i++) {
+    btnXoa[i].style.display = "inline-block";
+  }
 }
 
 function luuChinhSuaSanPham(maMonAn) {
@@ -881,6 +1027,7 @@ function luuChinhSuaSanPham(maMonAn) {
         the_loai: inp[2].value,
       };
       postThongTinSanPham(arr, maMonAn);
+      huyChinhSuaSanPham(maMonAn);
     } else {
       arr = {
         ma_monan: maMonAn,
@@ -890,6 +1037,7 @@ function luuChinhSuaSanPham(maMonAn) {
       };
       postThongTinSanPham(arr, maMonAn);
       capNhatAnhSanPham(event, maMonAn);
+
     }
   }
 
@@ -907,6 +1055,32 @@ function luuChinhSuaSanPham(maMonAn) {
 
   //   }
   // })
+}
+
+function xoaSanPham(ma_monan, tinh_trang){
+  let num;
+  if(tinh_trang == '1'){
+    num = 2;
+  } else if(tinh_trang == '2'){
+    num = 1;
+  }
+
+  $.ajax({
+    url: "../api/san_pham/san_pham.php",
+    type: "POST",
+    cache: false,
+    data: {
+      action: "anHienSanPham",
+      num: num,
+      maMonAn: ma_monan,
+    },
+    success: function (msg) {
+      // console.log(msg)
+      if (msg == "success") {
+        getSanPhamAdmins();
+      }
+    },
+  });
 }
 
 function postThongTinSanPham(arr, maMonAn) {
@@ -1341,3 +1515,354 @@ function chonAnhChoThemNhieuSanPham(id, preview, fileInp) {
     });
   }
 }
+
+function changeCardToListAndReverse(){
+  let ma_nhahang = document.getElementById("maNhaHang").innerHTML.trim();
+  $.ajax({
+    url: "../api/san_pham/san_pham.php",
+    type: "GET",
+    cache: false,
+    data: {
+      action: "getDataSanPhamOfMaSanpham",
+      ma_nhahang: ma_nhahang,
+    },
+    success: function (data) {
+      // console.log((data));
+      let rs_data = $.parseJSON(data);
+      // console.log(rs_data)
+
+      function compareTinhTrang(a, b) {
+        // Sử dụng toUpperCase() để chuyển các kí tự về cùng viết hoa
+        var typeA = a.tinh_trang.toUpperCase();
+        var typeB = b.tinh_trang.toUpperCase();
+    
+        let comparison = 0;
+        if (typeA > typeB) {
+          comparison = 1;
+        } else if (typeA < typeB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      rs_data.sort(compareTinhTrang);
+      // console.log(rs_data)
+
+
+      let sanPham = rs_data.map(a => {
+        let img = new Image();
+        let fileInput = 'sanPhamList_' + a.ma_monan;
+        let previewImg = 'previewImg_' + a.ma_monan;
+        let tr_id = 'td_listSanPham_' + a.ma_monan;
+        let old_path = "old_path_img" + a.ma_monan;
+        let tinhTrang;
+
+        if (a.img_monan == "") {
+          img = `<img src="https://via.placeholder.com/150" id="${previewImg}" style="cursor: pointer;" onclick="document.getElementById('${fileInput}').click()" class="card-img-top" alt="..." height="50" width="100%">
+                <img src="https://via.placeholder.com/150" id="${old_path}" style="display:none"/>
+                <input 
+                style="display:none;"
+                type="file" id="${fileInput}" 
+                accept="image/png, image/jpeg" 
+                onchange="chonAnhChoSPList('${previewImg}','${fileInput}')">
+          `;
+        } else {
+          img = `<img src="../asset/img_products/${a.img_monan}" id="${previewImg}" style="cursor: pointer;" onclick="document.getElementById('${fileInput}').click()" class="card-img-top" alt="..." height="50" width="100%">
+                <img src="../asset/img_products/${a.img_monan}" id="${old_path}" style="display:none"/>
+                <input 
+                style="display:none;"
+                type="file" id="${fileInput}" 
+                accept="image/png, image/jpeg" 
+                onchange="chonAnhChoSPList('${previewImg}','${fileInput}')">
+          `;
+        }
+
+        let btn = '';
+
+        if(a.tinh_trang == 2){
+          tinhTrang = '<span class="text-danger">Đã xóa</span>';
+          btn = `<button class='btn btn-danger' title='Xóa sản phẩm' onclick=anHienSanPhamTrongList('1','${a.ma_monan}')><i class='bx bx-show'></i></button>`
+        } else {
+          tinhTrang = '';
+          btn = `<button class='btn btn-danger' title='khôi phục sản phẩm' onclick=anHienSanPhamTrongList('2','${a.ma_monan}')><i class='bx bx-x'></i></button>`
+        }
+
+        
+        
+        // console.log(a)
+
+        return `
+          <tr id=${tr_id}>
+            <td>${img}</td>
+            <td><input class="active" type="text" style = "width:100%; paddding:10px 5px" value="${a.ten}"/></td>
+            <td><input class="active" type="text" style = "width:100%; paddding:10px 5px" value="${a.gia_tien}"/></td>
+            <td><input type="text" style = "width:100%; paddding:10px 5px" value="${a.da_ban}" disabled/></td>
+            <td><input type="text" style = "width:100%; paddding:10px 5px" value="${a.danh_gia}" disabled/></td>
+            <td><input class="active" type="text" style = "width:100%; paddding:10px 5px" value="${a.the_loai}"/></td>
+            <td>${tinhTrang}</td>
+            <td class="congCuListSanPham" id="congCuListSanPham" tr_id="${tr_id}">
+              <span class="congCuListSanPham_btn">
+                <button  onclick="LuuSanPhamTrongList('${a.ma_monan}','${tr_id}','${previewImg}','${old_path}','${fileInput}')" class="btn btn-success" title="Lưu thông tin"><i class='bx bx-check-double' ></i></button>
+                ${btn}
+              </span>
+              <input type="checkbox" class="congCuListSanPham_checkbox" name="${a.ma_monan}" value="${a.ma_monan}" style="display:none">
+            </td>
+          </tr>
+        `
+      });
+
+      let html = `
+        <table class="table table-hoaDon">
+          <thead class="thead-light">
+            <tr style="color:#fff">
+              <th scope="col">Hình ảnh</th>
+              <th scope="col">Tên sản phẩm</th>
+              <th scope="col">Gía bán</th>
+              <th scope="col">Đã bán</th>
+              <th scope="col">Đánh giá</th>
+              <th scope="col">Thể loại</th>
+              <th scope="col">Tình trạng</th>
+              <th scope="col">
+                <button class="btn btn-secondary" id="btn_checkbox" onclick="congCuListSanPham()"><i class='bx bx-checkbox'></i></button>
+                <button class="btn btn-secondary" id="btn_briefcase" onclick="congCuListSanPham() "style="display:none"><i class='bx bx-briefcase-alt-2' ></i></button><br>
+                <button class="btn btn-primary" id="checkedAllCheckBoxInListSP" onclick="checkedAllCheckBoxInListSP() "style="display:none"><i class='bx bx-check-square'></i></button><br>
+                <button class="btn btn-success" id="luuThongTinSanPhamDuocCheck" title="Lưu tất cả" onclick="luuThongTinSanPhamDuocCheck() "style="display:none"><i class='bx bx-check-double' ></i></button> 
+                <button class="btn btn-danger" id="xoaThongTinSanPhamDuocCheck" title="Xóa tất cả" onclick="xoaThongTinSanPhamDuocCheck() "style="display:none"><i class='bx bx-x'></i></button> 
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            ${
+              sanPham
+            }
+          </tbody>
+        </table>
+      `
+      
+      let btn = `<span id="changeCardToListAndReverse_icon" onclick="getSanPhamAdmins()"><i class='bx bx-credit-card-front'></i></span>`
+      
+      $("#changeCardToListAndReverse").html(btn)
+      $("#sanPhamBody").html(html);
+    }
+  });
+}
+
+
+function chonAnhChoSPList(preview, fileInp) {
+  // event.preventDefault();
+
+  let inpFile = document.getElementById(`${fileInp}`);
+  let previewImage = document.getElementById(`${preview}`);
+  // console.log(inpFile)
+  // console.log(previewImage)
+
+  const file = inpFile.files[0];
+  // console.log(this.files)
+  // console.log(file.name);
+  // console.log(inpFile.files);
+
+  if (file) {
+    const reader = new FileReader();
+    // console.log(reader);
+
+    reader.readAsDataURL(file);
+
+    reader.addEventListener("load", function () {
+      // console.log(this);
+      // console.log(this.result);
+      previewImage.src = this.result;
+    });
+  }
+}
+
+function LuuSanPhamTrongList(ma_monan,tr_id,previewImg,old_path,fileInput) {
+  let inp = document.querySelectorAll(
+    ` #${tr_id} input.active`
+  );
+
+  // console.log(inp)
+
+  let arr = {};
+
+  var xac_nhan = confirm("Bạn có chắc muốn lưu !!!");
+
+  if (xac_nhan) {
+    arr = {
+      ma_monan: ma_monan,
+      ten: inp[0].value,
+      gia: inp[1].value,
+      the_loai: inp[2].value,
+    };
+    postThongTinSanPhamTrongList(arr, ma_monan);
+    capNhatAnhSanPhamTrongList(event, ma_monan,previewImg,old_path,fileInput);
+  }
+}
+
+function postThongTinSanPhamTrongList(arr, maMonAn) {
+  $.ajax({
+    url: "../api/san_pham/san_pham.php",
+    type: "POST",
+    cache: false,
+    data: {
+      action: "capNhatTenSanPham",
+      arr: arr,
+    },
+    success: function (msg) {
+      // console.log(msg)
+      if (msg == "success") {
+        changeCardToListAndReverse()
+      }
+    },
+  });
+}
+
+function capNhatAnhSanPhamTrongList(e, maMonAn, previewImg,old_path,fileInput) {
+  console.log(e, maMonAn, previewImg,old_path,fileInput);
+  e.preventDefault();
+
+  let form_data = new FormData();
+
+  let img_id = $(`#${fileInput}`)
+  // console.log(form_data,img_id);
+
+  if (img_id.length == 1) {
+
+    let img = $(`#${fileInput}`)[0].files;
+    // console.log(img)
+
+    form_data.append("my_image", img[0]);
+    // console.log(img[0])
+    // console.log(form_data);
+
+    $.ajax({
+      url: "../api/san_pham/san_pham.php",
+      type: "POST",
+      cache: false,
+      data: form_data,
+      contentType: false,
+      processData: false,
+      success: function (res) {
+        // console.log(res);
+
+        let data = JSON.parse(res);
+
+        let path_old_img = document.querySelector(
+          `#${old_path}`
+        ).src;
+
+        let ma_monan = maMonAn;
+
+        $.ajax({
+          url: "../api/san_pham/san_pham.php",
+          type: "POST",
+          cache: false,
+          data: {
+            action: "upload_sanPham_img_admin",
+            data: data,
+            ma_monan: ma_monan,
+            path: path_old_img,
+          },
+          success: function (res) {
+            console.log(res);
+          },
+        });
+      },
+    });
+  } else if (img_id.length > 1) {
+    thongbaoloi("Vui lòng chỉ một hình ảnh.");
+  } else {
+    return;
+  }
+}
+
+function anHienSanPhamTrongList(num, maMonAn){
+  // console.log(num, maMonAn)
+  $.ajax({
+    url: "../api/san_pham/san_pham.php",
+    type: "POST",
+    cache: false,
+    data: {
+      action: "anHienSanPham",
+      num: num,
+      maMonAn: maMonAn,
+    },
+    success: function (msg) {
+      // console.log(msg)
+      if (msg == "success") {
+        changeCardToListAndReverse()
+      }
+    },
+  });
+}
+
+function congCuListSanPham() {
+  
+  $('.congCuListSanPham input[type="checkbox"]').toggle()
+  $('.congCuListSanPham .congCuListSanPham_btn').toggle()
+  $('#btn_checkbox').toggle()
+  $('#btn_briefcase').toggle()
+  $('#luuThongTinSanPhamDuocCheck').toggle()
+  $('#xoaThongTinSanPhamDuocCheck').toggle()
+  $('#checkedAllCheckBoxInListSP').toggle()
+}
+
+function checkedAllCheckBoxInListSP(){
+  let arrCheckBox = document.querySelectorAll('.congCuListSanPham input[type=checkbox].congCuListSanPham_checkbox');
+  // console.log(arrCheckBox)
+
+  for (var checkbox of arrCheckBox) {
+    checkbox.checked = true;
+  }
+
+}
+
+function luuThongTinSanPhamDuocCheck() {
+  let arrCheckBox = document.querySelectorAll('.congCuListSanPham input[type=checkbox].congCuListSanPham_checkbox:checked');
+  // console.log(arrCheckBox);
+  for (var checkbox of arrCheckBox) {
+    let tr_id = checkbox.parentNode.getAttribute('tr_id');
+    let input = document.querySelectorAll(`#${tr_id} input.active`);
+    console.log(input);
+    
+    let arr = {};
+
+    var xac_nhan = confirm("Bạn có chắc muốn lưu " + arrCheckBox.length + " sản phẩm !!!");
+
+    if (xac_nhan) {
+      arr = {
+        ma_monan: tr_id,
+        ten: input[0].value,
+        gia: input[1].value,
+        the_loai: input[2].value,
+      };
+      postThongTinSanPhamTrongList(arr, ma_monan);
+      capNhatAnhSanPhamTrongList(event, ma_monan,previewImg,old_path,fileInput);
+    }
+  }
+}
+
+function xoaThongTinSanPhamDuocCheck() {
+  let arrCheckBox = document.querySelectorAll('.congCuListSanPham input[type=checkbox].congCuListSanPham_checkbox:checked');
+  for (var checkbox of arrCheckBox) {
+    let ma_monan = checkbox.getAttribute('name');
+    console.log(ma_monan);
+
+    $.ajax({
+      url: "../api/san_pham/san_pham.php",
+      type: "POST",
+      cache: false,
+      data: {
+        action: "anHienSanPham",
+        num: 2,
+        maMonAn: ma_monan,
+      },
+      success: function (msg) {
+        // console.log(msg)
+        if (msg == "success") {
+          changeCardToListAndReverse()
+        }
+      },
+    });
+  }
+}
+

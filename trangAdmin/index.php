@@ -19,7 +19,7 @@
         include("../views/trangAdmin/index.php");
       ?>
 
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../library/admin/script.js"></script>
     <script src="../library/toast/jquery.toast.min.js"></script>

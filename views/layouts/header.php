@@ -150,7 +150,7 @@
                                 html += "<tr class='text-center'>"
                                 html += "<td><img height='50px' width='50px' src='../asset/img_products/" + data_sp[item].img_monan + "' img_monan='" + data_sp[item].img_monan + "'  class='img_monan_order'/></td>"
                                 html += "<td><strong><a class='ten_sanpham_order' ma_monan='" + data_sp[item].ma_monan + "' ma_nhahang='" + data_sp[item].ma_nhahang + "' dia_chi='" + data_sp[item].dia_chi + "' href='../san_pham/index.php?id=" + data_sp[item].id + "&ma_monan=" + data_sp[item].ma_monan + "&ma_nhahang=" + data_sp[item].ma_nhahang + "'>" + data_sp[item].ten + "</a></strong></td>"
-                                html += "<td><input class='so_luong_order' type='number' name='so_luong' value = '" + data_sp[item].so_luong +"' style='width:50px'/></td>"
+                                html += `<td><input class='so_luong_order_${data_sp[item].ma_monan}' type='number' name='so_luong' value=${data_sp[item].so_luong} style='width:50px' onchange= "changeSoLuongSanPham('so_luong_order_${data_sp[item].ma_monan}', '${data_sp[item].ma_monan}', 'add')"/></td>`
                                 html += "<td class='text-right gia_sanpham_order' gia='"+ (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)) + "'>" + (parseInt(data_sp[item].so_luong) * parseInt(data_sp[item].gia_tien)).toLocaleString('vi-VN') + "</td>"
                                 html += "<td class='text-center'><button onClick = addToCart('remove','" + data_sp[item].ma_monan + "') class='btnRemoveAction cart-action btn text-danger'><i class='fas fa-times-circle'></i></button></td>"
                                 html += "</tr>"
@@ -177,6 +177,28 @@
                         thongbaoloi('error')
                     }
 	            });
+  }
+
+
+        function changeSoLuongSanPham(val,ma_monan,action){
+          // console.log(val,ma_monan);
+          let so_luong = $(`${val}`).val();
+            var queryString = "";
+                if(action != "") {
+                    switch(action) {
+                        case "add":
+                            queryString = 'action=' + action + '&ma_monan=' + ma_monan + '&so_luong=' + so_luong;
+                        break;
+                    }	 
+                }
+                $.ajax({
+                    url: "../api/shopping_cart/shopping_cart.php",
+                    data: queryString,
+                    type: "POST",
+                    success:function(data){
+                      console.log(data)
+                    }
+                })
         }
   $(document).ready(function() {
     $('#luu_mat_khau_moi').on('click', function(){
@@ -214,13 +236,15 @@
         },
         success: function(msg) {
           thongbaotot(msg);
-          location.href = "../trang_chu/index.php";
+          setTimeout(function() {
+            location.href = "../trang_chu/index.php";
+          },2000)
         }
       });
     }
 
     function kiemTraMatKhau(mk_cu,mk_moi,mk_moi_2,username){
-      console.log(mk_cu,mk_moi,mk_moi_2,username)
+      // console.log(mk_cu,mk_moi,mk_moi_2,username)
       $.ajax({
         url: "../api/thongtin_khachhang/thaydoi_matkhau.php",
         type: "POST",

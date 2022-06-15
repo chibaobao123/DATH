@@ -53,32 +53,32 @@ function kiemtramatkhau(mk) {
 		return false;
 	}
 
-	// Validate lowercase letters
-	var lowerCaseLetters = /[a-z]/g;
-	if(mk.match(lowerCaseLetters)) {
-		console.log("success")
-	} else {
-		thongbaoloi("Chưa có ký tự viết thường !!!");
-		return false;
-	}
+	// // Validate lowercase letters
+	// var lowerCaseLetters = /[a-z]/g;
+	// if(mk.match(lowerCaseLetters)) {
+	// 	console.log("success")
+	// } else {
+	// 	thongbaoloi("Chưa có ký tự viết thường !!!");
+	// 	return false;
+	// }
 	
-	// Validate capital letters
-	var upperCaseLetters = /[A-Z]/g;
-	if(mk.match(upperCaseLetters)) {
-		console.log("success")
-	} else {
-		thongbaoloi("Chưa có ký tự viết hoa !!!");
-		return false;
-	}
+	// // Validate capital letters
+	// var upperCaseLetters = /[A-Z]/g;
+	// if(mk.match(upperCaseLetters)) {
+	// 	console.log("success")
+	// } else {
+	// 	thongbaoloi("Chưa có ký tự viết hoa !!!");
+	// 	return false;
+	// }
 	
-	// Validate numbers
-	var numbers = /[0-9]/g;
-	if(mk.match(numbers)) {
-		console.log("success")
-	} else {
-		thongbaoloi("Chưa có ký tự là số !!!");
-		return false;
-	}
+	// // Validate numbers
+	// var numbers = /[0-9]/g;
+	// if(mk.match(numbers)) {
+	// 	console.log("success")
+	// } else {
+	// 	thongbaoloi("Chưa có ký tự là số !!!");
+	// 	return false;
+	// }
 	
 	// Validate length
 	if(mk.length >= 8) {

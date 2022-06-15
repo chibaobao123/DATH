@@ -4,12 +4,13 @@
             <h1>Công cụ xử lý</h1>
         </div>
         <div class="l-4 m-0 c-0" style="display:flex; justify-content: flex-end; padding : 0 20px;">
+            <button class="btn btn-primary" onclick="document.getElementById('changeCardToListAndReverse_icon').click()" id="changeCardToListAndReverse"><span id="changeCardToListAndReverse_icon" onclick="changeCardToListAndReverse()"><i class='bx bx-credit-card-front'></i></span></button>
             <button class="btn btn-success" onclick="document.getElementById('modalThemSanPham').style.display='block'"><i class='bx bx-add-to-queue' ></i></button>
         </div>
     </div>
 </div>
 
-<div class="grid wide">
+<div class="grid wide" style="max-width: 1350px;">
     <div class="row sanPhamBody" id="sanPhamBody">
 
     </div>
